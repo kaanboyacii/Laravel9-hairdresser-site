@@ -1,76 +1,56 @@
-    <!-- loader  -->
-    <div class="loader_bg">
-        <div class="loader"><img src="images/loading.gif" alt="" /></div>
-    </div>
+	<!-- Header -->
 
-    <div class="wrapper">
-        <!-- end loader -->
+	<header class="header">
+		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
+			<div class="logo"><a href="#">Wish</a></div>
+			<nav class="main_nav">
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="categories.html">Services</a></li>
+					<li><a href="categories.html">About Us</a></li>
+					<li><a href="categories.html">Contact Us</a></li>
+					<li class="btn btn-secondary"><a href="contact.html">Login</a></li>
+				</ul>
+			</nav>
+			<div class="header_content ml-auto">
+				<div class="search header_search">
+					<form action="#">
+						<input type="search" class="search_input" required="required">
+						<button type="submit" id="search_button" class="search_button"><img src="{{asset('assets')}}/images/magnifying-glass.svg" alt=""></button>
+					</form>
+				</div>
+				<div class="shopping">
+					<!-- Cart -->
+					<a href="#">
+						<div class="cart">
+							<img src="{{asset('assets')}}/images/shopping-bag.svg" alt="">
+							<div class="cart_num_container">
+								<div class="cart_num_inner">
+									<div class="cart_num">1</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- Star -->
+					<a href="#">
+						<div class="star">
+							<img src="{{asset('assets')}}/images/star.svg" alt="">
+							<div class="star_num_container">
+								<div class="star_num_inner">
+									<div class="star_num">0</div>
+								</div>
+							</div>
+						</div>
+					</a>
+					<!-- Avatar -->
+					<a href="#">
+						<div class="avatar">
+							<img src="{{asset('assets')}}/images/avatar.svg" alt="">
+						</div>
+					</a>
+				</div>
+			</div>
 
-        <div class="sidebar">
-            <!-- Sidebar  -->
-            <nav id="sidebar">
-
-                <div id="dismiss">
-                    <i class="fa fa-arrow-left"></i>
-                </div>
-
-                <ul class="list-unstyled components">
-
-                    <li class="active">
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="service.html">Service</a>
-                    </li>
-                    <li>
-                        <a href="pricing.html">Pricing</a>
-                    </li>
-
-                    <li>
-                        <a href="barbers.html">Our Barbers</a>
-
-                    </li>
-
-                    <li>
-                        <a href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
-
-            </nav>
-        </div>
-
-        <div id="content">
-            <!-- header -->
-            <header>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-3">
-                            <div class="full">
-                                <a class="logo" href="index.html"><img src="{{ asset('assets')}}/images/logo.png" alt="#" /></a>
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="full">
-                                <div class="right_header_info">
-                                    <ul>
-                                        <li class="dinone"><img style="margin-right: 15px;margin-left: 15px;" src="{{ asset('assets')}}/images/phone_icon.png" alt="#"><a href="#">987-654-3210</a></li>
-                                        <li class="dinone"><img style="margin-right: 15px;" src="{{ asset('assets')}}/images/mail_icon.png" alt="#"><a href="#">demo@gmail.com</a></li>
-
-                                        <li class="dinone"><img style="margin-right: 15px;" src="{{ asset('assets')}}/images/search_icon.png" alt="#"></li>
-                                        <li class="button_user"> <a class="button" href="#">Book now</a></li>
-
-                                        <li>
-                                            <button type="button" id="sidebarCollapse">
-                                                <a href="#">MENU</a>
-                                            </button>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
+		</div>
+	</header>

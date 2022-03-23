@@ -7,8 +7,8 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="categories.html">Services</a></li>
-					<li><a href="categories.html">About Us</a></li>
-					<li><a href="categories.html">Contact Us</a></li>
+					<li><a href="categories.html">About</a></li>
+					<li><a href="categories.html">Contact</a></li>
 					<li class="btn btn-secondary"><a href="contact.html">Login</a></li>
 				</ul>
 			</nav>

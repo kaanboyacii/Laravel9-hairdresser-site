@@ -9,8 +9,8 @@
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="categories.html">Services</a></li>
-							<li><a href="categories.html">About Us</a></li>
-							<li><a href="categories.html">Contact Us</a></li>
+							<li><a href="categories.html">About</a></li>
+							<li><a href="categories.html">Contact</a></li>
 							<li><a href="contact.html">Login</a></li>
 						</ul>
 					</nav>

@@ -20,7 +20,7 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<div class="section_subtitle">only the best</div>
-						<div class="section_title">Services Prices</div>
+						<div class="section_title">Service categories</div>
 					</div>
 				</div>
 			</div>
@@ -80,7 +80,7 @@
 				<div class="col">
 					<div class="section_title_container text-center">
 						<div class="section_subtitle">only the best</div>
-						<div class="section_title">new arrivals</div>
+						<div class="section_title">Our services</div>
 					</div>
 				</div>
 			</div>
@@ -174,9 +174,9 @@
 		<div class="extra_promo extra_promo_1">
 			<div class="extra_promo_image" style="background-image:url({{asset('assets')}}/images/extra_1.jpg)"></div>
 			<div class="extra_1_content d-flex flex-column align-items-center justify-content-center text-center">
-				<div class="extra_1_price">30%<span>off</span></div>
-				<div class="extra_1_title">On all shoes</div>
-				<div class="extra_1_text">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
+				<div class="extra_1_price">20%<span>off</span></div>
+				<div class="extra_1_title">On all services</div>
+				<div class="extra_1_text">Don't miss this big discount valid on all services.</div>
 				<div class="button extra_1_button"><a href="checkout.html">check out</a></div>
 			</div>
 		</div>
@@ -184,11 +184,11 @@
 			<div class="extra_promo_image" style="background-image:url({{asset('assets')}}/images/extra_2.jpg)"></div>
 			<div class="extra_2_content d-flex flex-column align-items-center justify-content-center text-center">
 				<div class="extra_2_title">
-					<div class="extra_2_center">&</div>
-					<div class="extra_2_top">Mix</div>
-					<div class="extra_2_bottom">Match</div>
+					<div class="extra_2_center">-</div>
+					<div class="extra_2_top">Special</div>
+					<div class="extra_2_bottom">Care</div>
 				</div>
-				<div class="extra_2_text">*Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra.</div>
+				<div class="extra_2_text">Don't miss the care opportunities that you can find only on wish.</div>
 				<div class="button extra_2_button"><a href="checkout.html">check out</a></div>
 			</div>
 		</div>
@@ -329,7 +329,7 @@
 					<div class="col">
 						<div class="section_title_container text-center">
 							<div class="section_subtitle">only the best</div>
-							<div class="section_title">subscribe for a 20% discount</div>
+							<div class="section_title">subscribe for more campaigns</div>
 						</div>
 					</div>
 				</div>
@@ -341,7 +341,7 @@
 								<button type="submit" class="newsletter_button">subscribe</button>
 							</form>
 						</div>
-						<div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
+						<div class="newsletter_text">Send us your email and we will let you know about the campaigns, discounts and opportunities.</div>
 					</div>
 				</div>
 			</div>

@@ -31,6 +31,11 @@ Route::Get('/test/{id}',[HomeController::class, 'test'])->where('id','[0-9]+');
 //admin
 Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome');
 
+Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
+Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
+
+
 
 
 

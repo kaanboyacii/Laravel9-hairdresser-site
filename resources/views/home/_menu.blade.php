@@ -13,8 +13,8 @@
 			<ul class="menu_mm">
 				<li class="menu_mm"><a href="#">Home</a></li>
 				<li class="menu_mm"><a href="#">Services</a></li>
-				<li class="menu_mm"><a href="#">About Us</a></li>
-				<li class="menu_mm"><a href="#">Contact Us</a></li>
+				<li class="menu_mm"><a href="#">About</a></li>
+				<li class="menu_mm"><a href="#">Contact</a></li>
                 <li class="menu_mm"><a href="#">Login</a></li>
 			</ul>
 		</nav>

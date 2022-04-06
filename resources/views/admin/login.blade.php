@@ -31,7 +31,7 @@
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form action="{{ route('admin_logincheck')}}" method="post" class="pt-3">
+              <form action="{{ route('admin_logincheck') }}" method="post" class="pt-3">
                 @csrf
                 <div class="form-group">
                   <input name="email" id="email" type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">

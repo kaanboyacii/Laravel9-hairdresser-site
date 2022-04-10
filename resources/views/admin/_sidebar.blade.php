@@ -10,14 +10,16 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-              <i class="ti-palette menu-icon"></i>
-              <span class="menu-title">UI Elements</span>
+              <i class="ti-layout-grid4-alt menu-icon"></i>
+              <span class="menu-title">Order</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                <li class="nav-item"> <a class="nav-link">New Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" >Accepted Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" >Shipping Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" >Completed Orders</a></li>
               </ul>
             </div>
           </li>
@@ -28,21 +30,27 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/charts/chartjs.html">
+            <a class="nav-link" href="admin/products">
               <i class="ti-pie-chart menu-icon"></i>
               <span class="menu-title">Products</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/tables/basic-table.html">
-              <i class="ti-view-list-alt menu-icon"></i>
-              <span class="menu-title">Tables</span>
+            <a class="nav-link" href="admin/comments">
+              <i class="ti-comment menu-icon"></i>
+              <span class="menu-title">Comments</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/icons/themify.html">
-              <i class="ti-star menu-icon"></i>
-              <span class="menu-title">Icons</span>
+            <a class="nav-link" href="admin/messages">
+              <i class="ti-email menu-icon"></i>
+              <span class="menu-title">Messages</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="admin/faq">
+              <i class="ti-help menu-icon"></i>
+              <span class="menu-title">FAQ</span>
             </a>
           </li>
           <li class="nav-item">
@@ -60,12 +68,6 @@
                 <li class="nav-item"> <a class="nav-link" href="pages/samples/lock-screen.html"> Lockscreen </a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="documentation/documentation.html">
-              <i class="ti-write menu-icon"></i>
-              <span class="menu-title">Documentation</span>
-            </a>
           </li>
         </ul>
       </nav>

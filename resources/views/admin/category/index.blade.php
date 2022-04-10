@@ -30,6 +30,7 @@
                   <p class="card-description">
                     Category List
                   </p>
+                  <a class="btn btn-success" href="/admin/category/create">Add New Category</a>
                   <div class="table-responsive pt-3">
                     <table class="table table-bordered"  style="width: 88%;">
                       <thead>

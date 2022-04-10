@@ -3,9 +3,9 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.html">
+            <a href="{{route('admin_home')}}" class="nav-link">
               <i class="ti-shield menu-icon"></i>
-              <span class="menu-title">Dashboard</span>
+              <span class="menu-title">Home</span>
             </a>
           </li>
           <li class="nav-item">
@@ -22,15 +22,15 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pages/forms/basic_elements.html">
+            <a href="{{route('admin_category')}}" class="nav-link" >
               <i class="ti-layout-list-post menu-icon"></i>
-              <span class="menu-title">Form elements</span>
+              <span class="menu-title">Category</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="pages/charts/chartjs.html">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Charts</span>
+              <span class="menu-title">Products</span>
             </a>
           </li>
           <li class="nav-item">

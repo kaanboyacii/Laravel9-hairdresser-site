@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\HomeController as AdminHomeController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,7 +31,15 @@ Route::get('/contactus',[HomeController::class, 'contactus'])->name('contactus')
 Route::Get('/test/{id}',[HomeController::class, 'test'])->where('id','[0-9]+');
 
 //admin
-Route::get('/admin', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+Route::middleware('auth')->prefix('admin')->group(function() {
+    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
+
+    Route::get('category', [AdminCategoryController::class, 'index'])->name('admin_category');
+    Route::get('category/create', [AdminCategoryController::class, 'create'])->name('admin_category_create');
+    Route::get('category/store', [AdminCategoryController::class, 'store'])->name('admin_category_store');
+    Route::get('category/edit/{id}', [AdminCategoryController::class, 'edit'])->name('admin_category_edit');
+    Route::get('category/update/{id}', [AdminCategoryController::class, 'update'])->name('admin_category_update');
+});
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');

@@ -39,6 +39,7 @@ Route::middleware('auth')->prefix('admin')->group(function() {
     Route::get('category/store', [AdminCategoryController::class, 'store'])->name('admin_category_store');
     Route::get('category/edit/{id}', [AdminCategoryController::class, 'edit'])->name('admin_category_edit');
     Route::get('category/update/{id}', [AdminCategoryController::class, 'update'])->name('admin_category_update');
+    Route::get('category/show/{id}', [AdminCategoryController::class, 'show'])->name('admin_category_show');
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');

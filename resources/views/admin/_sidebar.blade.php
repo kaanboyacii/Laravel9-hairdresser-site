@@ -4,7 +4,7 @@
         <ul class="nav">
           <li class="nav-item">
             <a href="{{route('admin_home')}}" class="nav-link">
-              <i class="ti-shield menu-icon"></i>
+              <i class="ti-home menu-icon"></i>
               <span class="menu-title">Home</span>
             </a>
           </li>

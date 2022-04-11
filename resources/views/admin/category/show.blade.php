@@ -65,7 +65,7 @@
                     </table>
                     <br><br>
                     <a class="btn btn-primary" style="color: white;" href="/admin/category/edit/{{$data->id}}">Edit</a>
-                      <a  class="btn btn-danger" style="color: white;" href="/admin/category/destroy/{{$data->id}}">Delete</a>
+                    <a  class="btn btn-danger" style="color: white;" href="/admin/category/delete/{{$data->id}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a>
                   </div>
                 </div>
               </div>

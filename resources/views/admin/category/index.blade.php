@@ -74,7 +74,7 @@
                           <td>{{$rs->image}}</td>
                           <td>{{$rs->status}}</td>
                           <td><a class="btn btn-primary" style="color: white;" href="/admin/category/edit/{{$rs->id}}">Edit</a></td>
-                          <td><a  class="btn btn-danger" style="color: white;" href="/admin/category/delete/{{$rs->id}}">Delete</a></td>
+                          <td><a  class="btn btn-danger" style="color: white;" href="/admin/category/delete/{{$rs->id}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
                           <td><a class="btn btn-warning" style="color: white;" href="/admin/category/show/{{$rs->id}}">Show</a></td>
                         </tr>
                         @endforeach

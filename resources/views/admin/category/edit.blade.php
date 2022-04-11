@@ -30,7 +30,7 @@
                   <p class="card-description">
                     Edit Category
                   </p>
-                  <form role="form" action="/admin/category/update/{{$data->id}}" methot="POST" class="forms-sample">
+                  <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" methot="POST" class="forms-sample">
                     @csrf
                     <div class="form-group">
                       <label for="exampleInputName1">Title</label>

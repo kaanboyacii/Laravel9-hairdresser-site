@@ -3,7 +3,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a href="{{route('admin_home')}}" class="nav-link">
+            <a href="{{route('admin.index')}}" class="nav-link">
               <i class="ti-home menu-icon"></i>
               <span class="menu-title">Home</span>
             </a>
@@ -24,7 +24,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a href="{{route('admin_category')}}" class="nav-link" >
+            <a href="{{route('admin.category.index')}}" class="nav-link" >
               <i class="ti-layout-list-post menu-icon"></i>
               <span class="menu-title">Category</span>
             </a>

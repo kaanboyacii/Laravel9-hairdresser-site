@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>@yield('title')</title>
+  <title>Admin Category</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
   <link rel="stylesheet" href="{{asset('assets')}}/admin/vendors/base/vendor.bundle.base.css">
@@ -30,7 +30,7 @@
                   <p class="card-description">
                     Category List
                   </p>
-                  <a class="btn btn-success" href="/admin/category/create">Add New Category</a>
+                  <a class="btn btn-success" href="{{ route('admin.category.create')}}">Add New Category</a>
                   <div class="table-responsive pt-3">
                     <table class="table table-bordered"  style="width: 88%;">
                       <thead>
@@ -73,9 +73,9 @@
                           <td>{{$rs->description}}</td>
                           <td>{{$rs->image}}</td>
                           <td>{{$rs->status}}</td>
-                          <td><a class="btn btn-primary" style="color: white;" href="/admin/category/edit/{{$rs->id}}">Edit</a></td>
-                          <td><a  class="btn btn-danger" style="color: white;" href="/admin/category/delete/{{$rs->id}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
-                          <td><a class="btn btn-warning" style="color: white;" href="/admin/category/show/{{$rs->id}}">Show</a></td>
+                          <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
+                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
+                          <td><a class="btn btn-warning" style="color: white;" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
                         </tr>
                         @endforeach
                       </tbody>

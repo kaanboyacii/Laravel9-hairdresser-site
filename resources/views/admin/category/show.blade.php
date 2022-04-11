@@ -64,8 +64,8 @@
                       </tr>
                     </table>
                     <br><br>
-                    <a class="btn btn-primary" style="color: white;" href="/admin/category/edit/{{$data->id}}">Edit</a>
-                    <a  class="btn btn-danger" style="color: white;" href="/admin/category/delete/{{$data->id}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a>
+                    <a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$data->id])}}">Edit</a>
+                    <a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$data->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a>
                   </div>
                 </div>
               </div>

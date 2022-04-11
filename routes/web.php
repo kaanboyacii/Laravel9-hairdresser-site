@@ -30,17 +30,19 @@ Route::get('/contactus',[HomeController::class, 'contactus'])->name('contactus')
 
 Route::Get('/test/{id}',[HomeController::class, 'test'])->where('id','[0-9]+');
 
-//admin
-Route::middleware('auth')->prefix('admin')->group(function() {
-    Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-
-    Route::get('category', [AdminCategoryController::class, 'index'])->name('admin_category');
-    Route::get('category/create', [AdminCategoryController::class, 'create'])->name('admin_category_create');
-    Route::get('category/store', [AdminCategoryController::class, 'store'])->name('admin_category_store');
-    Route::get('category/edit/{id}', [AdminCategoryController::class, 'edit'])->name('admin_category_edit');
-    Route::get('category/update/{id}', [AdminCategoryController::class, 'update'])->name('admin_category_update');
-    Route::get('category/show/{id}', [AdminCategoryController::class, 'show'])->name('admin_category_show');
-    Route::get('category/delete/{id}', [AdminCategoryController::class, 'destroy'])->name('admin_category_delete');
+//ADMIN PANEL ROUTES
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
+    Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+    //ADMIN CATEGORY ROUTES
+    Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function() {
+        Route::get('/', [AdminCategoryController::class, 'index'])->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/update/{id}','update')->name('update');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/delete/{id}','destroy')->name('delete');
+    });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');

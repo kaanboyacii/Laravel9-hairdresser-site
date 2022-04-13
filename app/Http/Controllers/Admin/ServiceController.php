@@ -4,25 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\service;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
-
-
-class CategoryController extends Controller
+class serviceController extends Controller
 {
-    protected $appends=[
-        'getParentsTree'
-    ];
-    public static function getParentsTree($category,$title){
-        if($category->parent_id == 0)
-        {
-            return $title;
-        }
-        $parent = Category::find($category->parent_id);
-        $title=$parent->title.'>'.$title;
-        return CategoryController::getParentsTree($parent,$title);
-    }
     /**
      * Display a listing of the resource.
      *
@@ -30,8 +18,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data=Category::all();
-        return view('admin.category.index',[
+        $data=service::all();
+        return view('admin.service.index',[
             'data'=> $data
         ]);
     }
@@ -44,7 +32,7 @@ class CategoryController extends Controller
     public function create()
     {
         $data=Category::all();
-        return view('admin.category.create',[
+        return view('admin.service.create',[
             'data'=> $data
         ]);
     }
@@ -57,29 +45,32 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $data= new Category();
-        $data->parent_id = $request->parent_id;
+        $data=new service();
+        $data->category_id = $request->category_id;
+        $data->user_id = $request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->price = $request->price;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/service');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\service  $service
      * @return \Illuminate\Http\Response
      */
-    public function show(Category $category,$id)
+    public function show(service $service,$id)
     {
-        $data=Category::find($id);
-        return view('admin.category.show',[
+        $data=service::find($id);
+        return view('admin.service.show',[
             'data'=> $data
         ]);
     }
@@ -87,14 +78,14 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\service  $service
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category,$id)
+    public function edit(service $service,$id)
     {
-        $data=Category::find($id);
+        $data=service::find($id);
         $datalist=Category::all();
-        return view('admin.category.edit',[
+        return view('admin.service.edit',[
             'data'=> $data,
             'datalist' => $datalist
         ]);
@@ -105,38 +96,41 @@ class CategoryController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\service  $service
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category,$id)
+    public function update(Request $request, service $service,$id)
     {
-        $data=Category::find($id);
-        $data->parent_id = $request->parent_id;
+        $data=service::find($id);
+        $data->category_id = $request->category_id;
+        $data->user_id = $request->user_id;
         $data->title = $request->title;
         $data->keywords = $request->keywords;
         $data->description = $request->description;
+        $data->detail = $request->detail;
+        $data->price = $request->price;
         $data->status = $request->status;
         if($request->file('image')){
             $data->image= $request->file('image')->store('images');
         }
         $data->save();
-        return redirect('admin/category');
+        return redirect('admin/service');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Category  $category
+     * @param  \App\Models\service  $service
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category,$id)
+    public function destroy(service $service,$id)
     {
-        $data=Category::find($id);
+        $data=Service::find($id);
         if($data->image && Storage::disk('public')->Storage::exists($data->image)){
             Storage::delete($data->image);
         }
         $data->delete();
-        return redirect('admin/category');
+        return redirect('admin/service');
 
     }
 }

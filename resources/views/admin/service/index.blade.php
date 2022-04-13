@@ -26,11 +26,11 @@
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Category List</h4>
+                  <h4 class="card-title">Service List</h4>
                   <p class="card-description">
-                    Category List
+                    Service List
                   </p>
-                  <a class="btn btn-outline-success" href="{{ route('admin.category.create')}}">Add New Category</a>
+                  <a class="btn btn-outline-success" href="{{ route('admin.service.create')}}">Add New Service</a>
                   <div class="table-responsive pt-3">
                     <table class="table table-bordered"
                     style=" table-layout:auto;width: 150px;">
@@ -40,16 +40,13 @@
                             Id
                           </th>
                           <th>
-                            Parent
+                            Category
                           </th>
                           <th>
                             Title
                           </th>
                           <th>
-                            Keywords
-                          </th>
-                          <th>
-                            Description
+                            Price
                           </th>
                           <th>
                             Image
@@ -74,17 +71,16 @@
                           <td>{{$rs->id}}</td>
                           <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                           <td>{{$rs->title}}</td>
-                          <td>{{$rs->keywords}}</td>
-                          <td>{{$rs->description}}</td>
+                          <td>{{$rs->price}}</td>
                           <td>
                               @if ($rs->image)
                               <img src="{{Storage::url($rs->image)}}" style="height: 40px" >
                               @endif
                           </td>
                           <td>{{$rs->status}}</td>
-                          <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
-                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
-                          <td><a class="btn btn-warning" style="color: white;" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
+                          <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.service.edit',['id'=>$rs->id])}}">Edit</a></td>
+                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.service.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
+                          <td><a class="btn btn-warning" style="color: white;" href="{{route('admin.service.show',['id'=>$rs->id])}}">Show</a></td>
                         </tr>
                         @endforeach
                       </tbody>

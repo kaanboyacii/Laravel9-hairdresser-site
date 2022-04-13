@@ -3,6 +3,7 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,16 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     //ADMIN CATEGORY ROUTES
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function() {
         Route::get('/', [AdminCategoryController::class, 'index'])->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/update/{id}','update')->name('update');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/delete/{id}','destroy')->name('delete');
+    });
+    //ADMIN SERVICE ROUTES
+    Route::prefix('/service')->name('service.')->controller(AdminServiceController::class)->group(function() {
+        Route::get('/', [AdminServiceController::class, 'index'])->name('index');
         Route::get('/create','create')->name('create');
         Route::get('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');

@@ -30,9 +30,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin/products">
+            <a class="nav-link" href="{{route('admin.service.index')}}">
               <i class="ti-pie-chart menu-icon"></i>
-              <span class="menu-title">Products</span>
+              <span class="menu-title">Services</span>
             </a>
           </li>
           <li class="nav-item">

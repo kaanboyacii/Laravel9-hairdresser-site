@@ -32,34 +32,37 @@
                   </p>
                   <a class="btn btn-success" href="{{ route('admin.category.create')}}">Add New Category</a>
                   <div class="table-responsive pt-3">
-                    <table class="table table-bordered"  style="width: 88%;">
+                    <table class="table table-bordered"  style="width:70%">
                       <thead>
                         <tr>
-                          <th style="width: 12px;">
-                            #
+                          <th>
+                            Id
                           </th>
-                          <th style="width: 50px;">
+                          <th>
+                            Parent
+                          </th>
+                          <th>
                             Title
                           </th>
-                          <th style="width: 50px;">
+                          <th>
                             Keywords
                           </th>
-                          <th style="width: 30px;">
+                          <th >
                             Description
                           </th>
-                          <th style="width: 20px;">
+                          <th >
                             Image
                           </th>
-                          <th style="width: 20px;">
+                          <th >
                             Status
                           </th>
-                          <th style="width: 20px;">
+                          <th >
                             Edit
                           </th>
-                          <th style="width: 20px;">
+                          <th >
                             Delete
                           </th>
-                          <th style="width: 20px;">
+                          <th >
                             Show
                           </th>
                         </tr>
@@ -68,10 +71,15 @@
                         @foreach($data as $rs)
                         <tr>
                           <td>{{$rs->id}}</td>
+                          <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                           <td>{{$rs->title}}</td>
                           <td>{{$rs->keywords}}</td>
                           <td>{{$rs->description}}</td>
-                          <td>{{$rs->image}}</td>
+                          <td>
+                              @if ($rs->image)
+                              <img src="{{Storage::url($rs->image)}}" style="height: 40px" >
+                              @endif
+                          </td>
                           <td>{{$rs->status}}</td>
                           <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
                           <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>

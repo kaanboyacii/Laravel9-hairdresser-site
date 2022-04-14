@@ -35,6 +35,16 @@
                   <div class="table-responsive pt-3">
                     <table class="table table-bordered">
                       <tr>
+                          <th style="width: 30px">Id</th>
+                          <td>{{$data->id}}</td>
+                      </tr>
+                      <tr>
+                          <th style="width: 30px">Category</th>
+                          <td>
+                              {{\App\Http\Controllers\Admin\CategoryController::getParentsTree($data->category, $data->category->title) }}
+                          </td>
+                      </tr>
+                      <tr>
                           <th style="width: 30px">Title</th>
                           <td>{{$data->title}}</td>
                       </tr>

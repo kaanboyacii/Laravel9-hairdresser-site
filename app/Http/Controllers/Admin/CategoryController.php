@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Http\file;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+
 
 
 
@@ -117,9 +119,9 @@ class CategoryController extends Controller
         $data->keywords = $request->keywords;
         $data->description = $request->description;
         $data->status = $request->status;
-        if($request->file('image')){
-             $data->image= $request->file('image')->store('images');
-         }
+        if ($request->file('image')){
+            $data->image= $request->file('image')->store('images');
+        }
         $data->save();
         return redirect('admin/category');
     }

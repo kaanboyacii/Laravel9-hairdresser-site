@@ -30,7 +30,7 @@
                   <p class="card-description">
                     Edit Service
                   </p>
-                  <form role="form" action="{{route('admin.service.update',['id'=>$data->id])}}" methot="POST" enctype="multipart/form-data" class="forms-sample">
+                  <form role="form" enctype="multipart/form-data" action="{{route('admin.service.update',['id'=>$data->id])}}" methot="POST" class="forms-sample">
                     @csrf
                     <div class="form-group">
                         <label for="">Parent Service</label>
@@ -72,12 +72,6 @@
                          <input class="form-control" type="file" name="image" id="formFile">
                       </div>
                     </div>
-                    <!-- <div class="form-group">
-                      <div class="mb-3">
-                         <label for="formFile" class="form-label">Image</label>
-                         <input class="form-control" type="file" name="image" id="formFile">
-                      </div>
-                    </div> -->
                     <div class="form-group">
                       <label for="exampleSelectGender">Status</label>
                         <select name="status" class="form-control">

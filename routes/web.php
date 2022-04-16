@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
-
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,7 +40,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
         Route::get('/create','create')->name('create');
         Route::get('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');
-        Route::get('/update/{id}','update')->name('update');
+        Route::post('/update/{id}','update')->name('update');
         Route::get('/show/{id}','show')->name('show');
         Route::get('/delete/{id}','destroy')->name('delete');
     });
@@ -50,7 +50,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
         Route::get('/create','create')->name('create');
         Route::get('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');
-        Route::get('/update/{id}','update')->name('update');
+        Route::post('/update/{id}','update')->name('update');
         Route::get('/show/{id}','show')->name('show');
         Route::get('/delete/{id}','destroy')->name('delete');
     });
@@ -60,9 +60,16 @@ Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login')
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
 
-
-
-
+route::get('/func',function() {
+    echo'<form action="/post" method="post" enctype="multipart/form-data">'.csrf_field();
+      echo '
+        <input type="file" name="photo">
+        <button>Post</button>
+      </form>';
+});
+route::post('/post',function(Request $request){
+    $file = $request->file('photo')->store('images');
+});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

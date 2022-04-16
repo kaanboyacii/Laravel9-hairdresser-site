@@ -30,7 +30,7 @@
                   <p class="card-description">
                     Edit Category
                   </p>
-                  <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" methot="post"  enctype="multipart/form-data" class="forms-sample">
+                  <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post"  enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                         <label for="">Parent Category</label>
@@ -54,9 +54,9 @@
                       <input type="Description" class="form-control" id="exampleInputName1" placeholder="Description" name="description" value="{{$data->description}}">
                     </div>
                     <div class="form-group">
-                      <label>File upload</label>
+                      <label for="exampleInputFile">Image upload</label>
                       <div class="input-group col-xs-12">
-                         <input class="form-control" type="file" name="image" id="image">
+                         <input type="file" name="image" id="">
                       </div>
                     </div>
                     <div class="form-group">

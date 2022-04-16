@@ -32,6 +32,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        // Schema::dropIfExists('categories');
+        Schema::table('categories',function($table) {
+            $table->dropColumn('iamge');
+        });
     }
 };

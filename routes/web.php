@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\HomeController as AdminHomeController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function() {
         Route::get('/', [AdminCategoryController::class, 'index'])->name('index');
         Route::get('/create','create')->name('create');
-        Route::get('/store','store')->name('store');
+        Route::post('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/show/{id}','show')->name('show');
@@ -48,11 +49,17 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::prefix('/service')->name('service.')->controller(AdminServiceController::class)->group(function() {
         Route::get('/', [AdminServiceController::class, 'index'])->name('index');
         Route::get('/create','create')->name('create');
-        Route::get('/store','store')->name('store');
+        Route::post('/store','store')->name('store');
         Route::get('/edit/{id}','edit')->name('edit');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/show/{id}','show')->name('show');
         Route::get('/delete/{id}','destroy')->name('delete');
+    });
+    //ADMIN IMAGE GALLERY ROUTES
+    Route::prefix('/image')->name('image.')->controller(AdminImageController::class)->group(function() {
+        Route::get('/{sid}', [AdminImageController::class, 'index'])->name('index');
+        Route::post('/store/{sid}','store')->name('store');
+        Route::get('/delete/{sid}/{id}','destroy')->name('delete');
     });
 });
 
@@ -60,16 +67,6 @@ Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login')
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
 
-route::get('/func',function() {
-    echo'<form action="/post" method="post" enctype="multipart/form-data">'.csrf_field();
-      echo '
-        <input type="file" name="photo">
-        <button>Post</button>
-      </form>';
-});
-route::post('/post',function(Request $request){
-    $file = $request->file('photo')->store('images');
-});
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

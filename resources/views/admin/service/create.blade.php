@@ -30,7 +30,7 @@
                   <p class="card-description">
                     Add Service
                   </p>
-                  <form role="form" action="{{route('admin.service.store')}}" methot="POST" enctype="multipart/form-data" class="forms-sample">
+                  <form role="form" action="{{route('admin.service.store')}}" method="POST" enctype="multipart/form-data" class="forms-sample">
                     @csrf
                     <div class="form-group">
                         <label for="">Parent Service</label>
@@ -64,18 +64,11 @@
                     </div>
                     <div class="form-group">
                       <label>File upload</label>
-                      <input type="file" name="img[]" class="file-upload-default">
                       <div class="input-group col-xs-12">
                          <label for="formFile" class="form-label"></label>
-                         <input class="form-control" type="file" name="image" id="formFile">
+                         <input class="form-control" type="file" name="image" id="image">
                       </div>
                     </div>
-                    <!-- <div class="form-group">
-                      <div class="mb-3">
-                         <label for="formFile" class="form-label">Image</label>
-                         <input class="form-control" type="file" name="image" id="formFile">
-                      </div>
-                    </div> -->
                     <div class="form-group">
                       <label for="exampleSelectGender">Status</label>
                         <select name="status" class="form-control">

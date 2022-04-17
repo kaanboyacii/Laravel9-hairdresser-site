@@ -110,7 +110,6 @@ class serviceController extends Controller
         $data->detail = $request->detail;
         $data->price = $request->price;
         $data->status = $request->status;
-        // $data->image = Storage::putFile('images',$request->file('image'));
         if($request->file('image')){
              $data->image= $request->file('image')->store('images');
          }
@@ -126,10 +125,8 @@ class serviceController extends Controller
      */
     public function destroy(service $service,$id)
     {
-        $data=Service::find($id);
-        if($data->image && Storage::disk('public')->Storage::exists($data->image)){
-            Storage::delete($data->image);
-        }
+        $data=service::find($id);
+        Storage::delete("$data->image");
         $data->delete();
         return redirect('admin/service');
 

@@ -20,71 +20,57 @@
   @yield('javascript')
 </head>
 <body>
-@include('admin._header')
-@include('admin._sidebar')
+@extends('layouts.adminwindow')
 @yield('content')
 <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Category List</h4>
-                  <p class="card-description">
-                    Category List
-                  </p>
-                  <a class="btn btn-outline-success" href="{{ route('admin.category.create')}}">Add New Category</a>
+                  <h4 class="card-title">{{$service->title}}</h4>
+                  <form role="form" action="{{route('admin.image.store',['sid'=>$service->id])}}" method="POST" enctype="multipart/form-data" class="forms-sample">
+                    @csrf
+                    <div class="form-group">
+                      <label for="exampleInputName1">Title</label>
+                      <input type="text" class="form-control" id="exampleInputName1" placeholder="Title" name="title">
+                    <div class="form-group">
+                      <label>File upload</label>
+                      <div class="input-group col-xs-12">
+                         <label for="formFile" class="form-label"></label>
+                         <input class="form-control" type="file" name="image" id="image">
+                      </div>
+                      <div class="input-group-append">
+                          <input class="input-group-text" type="submit" value="Upload">
+                      </div>
+                    </div>
+                  </form>
                   <div class="table-responsive pt-4">
                     <table class="table table-bordered"
-                    style=" table-layout:auto;width: 150px;">
+                    >
                       <thead>
                         <tr>
                           <th>
                             Id
                           </th>
                           <th>
-                            Parent
-                          </th>
-                          <th>
                             Title
-                          </th>
-                          <th>
-                            Keywords
-                          </th>
-                          <th>
-                            Description
-                          </th>
                           <th>
                             Image
                           </th>
                           <th>
-                            Status
-                          </th>
-                          <th>
-                            Edit
-                          </th>
-                          <th>
                             Delete
-                          </th>
-                          <th>
-                            Show
                           </th>
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($data as $rs)
+                        @foreach($images as $rs)
                         <tr>
                           <td>{{$rs->id}}</td>
-                          <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                           <td>{{$rs->title}}</td>
-                          <td>{{$rs->keywords}}</td>
-                          <td>{{$rs->description}}</td>
                           <td>
                               @if ($rs->image)
-                              <img src="{{Storage::url($rs->image)}}" style="height:50px ;width:50px; border-radius:2px">
+                              <img src="{{Storage::url($rs->image)}}" style="height:250px ;width:250px; border-radius:2px">
                               @endif
                           </td>
-                          <td>{{$rs->status}}</td>
-                          <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
-                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
-                          <td><a class="btn btn-warning" style="color: white;" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
+                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.image.delete',['sid'=>$service->id,'id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
                         </tr>
                         @endforeach
                       </tbody>
@@ -93,7 +79,5 @@
                 </div>
               </div>
             </div>
-@include('admin._footer')
-@yield('footer')
 </body>
 </html>

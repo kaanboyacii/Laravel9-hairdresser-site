@@ -65,8 +65,12 @@
                           <td>{{$data->price}}</td>
                       </tr>
                       <tr>
-                          <th style="width: 30px">Image</th>
-                          <td>{{$data->image}}</td>
+                      <th>Image</th>
+                          <td>
+                              @if ($data->image)
+                              <img src="{{Storage::url($data->image)}}" style="height:150px ;width:150px; border-radius:2px">
+                              @endif
+                          </td>
                       </tr>
                       <tr>
                           <th style="width: 30px">Status</th>

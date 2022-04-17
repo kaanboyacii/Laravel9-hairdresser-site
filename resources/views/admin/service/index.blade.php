@@ -23,17 +23,19 @@
 @include('admin._header')
 @include('admin._sidebar')
 @yield('content')
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Service List</h4>
                   <p class="card-description">
                     Service List
                   </p>
-                  <a class="btn btn-outline-success" href="{{ route('admin.service.create')}}">Add New Service</a>
+                  <a class="btn btn-outline-secondary" href="{{ route('admin.service.create')}}">Add New Service</a>
                   <div class="table-responsive pt-3">
-                    <table class="table table-bordered"
-                    style=" table-layout:auto;width: 150px;">
+                    <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
@@ -80,7 +82,7 @@
                               <img src="{{Storage::url($rs->image)}}" style="height:50px ;width:50px; border-radius:2px">
                               @endif
                           </td>
-                          <td>
+                          <td style="text-align: center">
                               <a href="{{route('admin.image.index',['sid'=>$rs->id])}}" onclick="return !window.open(this.href,'','top=50 left=100 width=1100,height=700')">
                               <img src="{{asset('assets')}}/admin/images/gallerybutton.jpg" style="height:50px ;width:50px; border-radius:2px">
                               </a>
@@ -97,7 +99,9 @@
                 </div>
               </div>
             </div>
-@include('admin._footer')
-@yield('footer')
+        </div>
+    </div>
+    @include('admin._footer')
+</div>
 </body>
 </html>

@@ -23,17 +23,19 @@
 @include('admin._header')
 @include('admin._sidebar')
 @yield('content')
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+          <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Category List</h4>
                   <p class="card-description">
                     Category List
                   </p>
-                  <a class="btn btn-outline-success" href="{{ route('admin.category.create')}}">Add New Category</a>
-                  <div class="table-responsive pt-4">
-                    <table class="table table-bordered"
-                    style=" table-layout:auto;width: 150px;">
+                  <a class="btn btn-outline-secondary" href="{{ route('admin.category.create')}}">Add New Category</a>
+                  <div class="table-responsive pt-3">
+                    <table class="table table-bordered">
                       <thead>
                         <tr>
                           <th>
@@ -45,12 +47,12 @@
                           <th>
                             Title
                           </th>
-                          <th>
+                          <!-- <th>
                             Keywords
                           </th>
                           <th>
                             Description
-                          </th>
+                          </th> -->
                           <th>
                             Image
                           </th>
@@ -74,17 +76,17 @@
                           <td>{{$rs->id}}</td>
                           <td>{{\App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
                           <td>{{$rs->title}}</td>
-                          <td>{{$rs->keywords}}</td>
-                          <td>{{$rs->description}}</td>
+                          <!-- <td>{{$rs->keywords}}</td>
+                          <td>{{$rs->description}}</td> -->
                           <td>
                               @if ($rs->image)
                               <img src="{{Storage::url($rs->image)}}" style="height:50px ;width:50px; border-radius:2px">
                               @endif
                           </td>
                           <td>{{$rs->status}}</td>
-                          <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
-                          <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
-                          <td><a class="btn btn-warning" style="color: white;" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
+                          <td style="text-align: center"><a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$rs->id])}}">Edit</a></td>
+                          <td style="text-align: center"><a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>
+                          <td style="text-align: center"><a class="btn btn-warning" style="color: white;" href="{{route('admin.category.show',['id'=>$rs->id])}}">Show</a></td>
                         </tr>
                         @endforeach
                       </tbody>
@@ -93,7 +95,9 @@
                 </div>
               </div>
             </div>
-@include('admin._footer')
-@yield('footer')
+        </div>
+    </div>
+    @include('admin._footer')
+</div>
 </body>
 </html>

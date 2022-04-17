@@ -24,7 +24,10 @@
 @include('admin._sidebar')
 
 @yield('content')
-<div class="col-lg-12 grid-margin stretch-card">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+           <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">{{$data->title}} Detail</h4>
@@ -70,11 +73,14 @@
                     <br><br>
                     <a class="btn btn-primary" style="color: white;" href="{{route('admin.category.edit',['id'=>$data->id])}}">Edit</a>
                     <a  class="btn btn-danger" style="color: white;" href="{{route('admin.category.delete',['id'=>$data->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a>
+                    <a href="{{route('admin.category.index')}}" >  <button class="btn btn-light">Cancel </button> </a>
                   </div>
                 </div>
               </div>
             </div>
-@include('admin._footer')
-@yield('footer')
+        </div>
+    </div>
+    @include('admin._footer')
+</div>
 </body>
 </html>

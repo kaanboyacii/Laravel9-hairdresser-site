@@ -23,7 +23,10 @@
 @include('admin._header')
 @include('admin._sidebar')
 @yield('content')
-<div style="padding-right: 200px;" class="col-12 grid-margin stretch-card">
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div style="padding-right: 200px;" class="col-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">Add Service</h4>
@@ -78,10 +81,14 @@
                       </div>
                     <button type="submit" class="btn btn-primary me-2">Submit</button>
                   </form>
+                  <br>
+                  <a href="{{route('admin.service.index')}}" >  <button class="btn btn-light">Cancel </button> </a>
                 </div>
               </div>
             </div>
-@include('admin._footer')
-@yield('footer')
+        </div>
+    </div>
+    @include('admin._footer')
+</div>
 </body>
 </html>

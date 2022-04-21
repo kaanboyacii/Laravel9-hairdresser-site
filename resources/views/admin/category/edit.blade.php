@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="{{asset('assets')}}/admin/css/style.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="{{asset('assets')}}/admin/images/favicon.png" />
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
   @yield('css')
   @yield('javascript')
 </head>

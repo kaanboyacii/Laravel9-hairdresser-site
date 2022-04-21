@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('title',150);
             $table->string('keywords')->nullable();
             $table->string('description')->nullable();
-            $table->string('detail')->nullable();
+            $table->string('detail',500)->change()->nullable();
             $table->float('price')->nullable();
             $table->string('image',100)->nullable();
             $table->string('status',6)->nullable()->default('False');

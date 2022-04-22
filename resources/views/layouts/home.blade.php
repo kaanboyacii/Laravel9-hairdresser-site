@@ -22,9 +22,10 @@
 @include('home._header')
 
 @section('content')
-içerik alanı
 @show
+
 @include('home._footer')
+@yield('foot')
 
 </body>
 </html>

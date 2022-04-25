@@ -91,7 +91,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
             <div class="col-lg-4 product_col">
                 <div class="product">
                     <div class="product_image">
-                        <img style="width:600px ;height:360px" src="{{ Storage::url($rs->image)}}" alt="">
+                        <img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt="">
                     </div>
                     <div class="rating rating_4">
                         <i class="fa fa-star"></i>

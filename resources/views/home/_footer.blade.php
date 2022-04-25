@@ -45,3 +45,7 @@
 	<script src="{{asset('assets')}}/plugins/colorbox/jquery.colorbox-min.js"></script>
 	<script src="{{asset('assets')}}/js/custom.js"></script>
     <script src="{{asset('assets')}}/js/product_custom.js"></script>
+    <script src="{{asset('assets')}}/plugins/Isotope/isotope.pkgd.min.js"></script>
+    <script src="{{asset('assets')}}/plugins/malihu-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
+    <script src="{{asset('assets')}}/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
+    <script src="{{asset('assets')}}/js/categories_custom.js"></script>

@@ -34,10 +34,12 @@ class HomeController extends Controller
     public function categoryservices($id)
     {
         $data = Service::find($id);
-        $images = DB::table('images')->where('service_id',$id)->get();
-        return view('home.service', [
+        $category = Category::find($id);
+        $services = DB::table('services')->where('category_id',$id)->get();
+        return view('home.categoryservices', [
             'data' => $data,
-            'images' => $images
+            'category' => $category,
+            'services' => $services
         ]);
     }
     public static function maincategorylist(){

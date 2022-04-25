@@ -21,6 +21,11 @@
     <link href="{{asset('assets')}}/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/product.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/product_responsive.css">
+    <link href="{{asset('assets')}}/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets')}}/plugins/malihu-custom-scrollbar/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/categories_responsive.css">
 
 </head>
 

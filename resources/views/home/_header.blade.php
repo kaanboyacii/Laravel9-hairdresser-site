@@ -6,6 +6,7 @@
 			<nav class="main_nav">
 				<ul>
 					<li><a href="#">Home</a></li>
+					<li><a href="#">Categories</a></li>
 					<li><a href="categories.html">Services</a></li>
 					<li><a href="categories.html">About</a></li>
 					<li><a href="categories.html">Contact</a></li>
@@ -50,7 +51,6 @@
 					</a>
 				</div>
 			</div>
-
 			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>
 		</div>
 	</header>

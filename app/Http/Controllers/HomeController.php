@@ -6,18 +6,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\service;
+use Illuminate\Support\Facades\DB;
 
 
 class HomeController extends Controller
 {
     public function index()
     {
+        $page='home';
         $sliderdata = Service::limit(4)->get();
         $servicelist1 = Service::limit(6)->get();
         return view('home.index', [
+            'page'=>$page,
             'sliderdata' => $sliderdata,
             'servicelist1' => $servicelist1
+        ]);
+    }
+    public function service($id)
+    {
+        $data = Service::find($id);
+        $images = DB::table('images')->where('service_id',$id)->get();
+        return view('home.service', [
+            'data' => $data,
+            'images' => $images
         ]);
     }
     // public function index()

@@ -102,7 +102,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     </div>
                     <div class="product_content clearfix">
                         <div class="product_info">
-                            <div class="product_name"><a href="product.html">{{$rs->title}}</a></div>
+                            <div class="product_name"><a href="{{route('service',['id'=>$rs->id])}}">{{$rs->title}}</a></div>
                             <div class="product_price">{{$rs->price}}.00$</div>
                         </div>
                         <div class="product_options">

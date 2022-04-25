@@ -30,7 +30,7 @@ Route::get('/aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/contactus',[HomeController::class, 'contactus'])->name('contactus');
 
 
-Route::Get('/test/{id}',[HomeController::class, 'test'])->where('id','[0-9]+');
+Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');
 
 //ADMIN PANEL ROUTES
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {

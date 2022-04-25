@@ -44,3 +44,4 @@
 	<script src="{{asset('assets')}}/plugins/parallax-js-master/parallax.min.js"></script>
 	<script src="{{asset('assets')}}/plugins/colorbox/jquery.colorbox-min.js"></script>
 	<script src="{{asset('assets')}}/js/custom.js"></script>
+    <script src="{{asset('assets')}}/js/product_custom.js"></script>

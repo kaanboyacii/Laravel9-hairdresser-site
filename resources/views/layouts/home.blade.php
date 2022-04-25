@@ -16,6 +16,10 @@
   <link href="{{asset('assets')}}/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/main_styles.css">
   <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/responsive.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/bootstrap4/bootstrap.min.css">
+  <link href="{{asset('assets')}}/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/product.css">
+  <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/product_responsive.css">
 </head>
 <body>
 <div class="super_container">

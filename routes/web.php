@@ -31,6 +31,7 @@ Route::get('/contactus',[HomeController::class, 'contactus'])->name('contactus')
 
 
 Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');
+Route::get('/categoryservices/{id}',[HomeController::class, 'categoryservices'])->name('categoryservices');
 
 //ADMIN PANEL ROUTES
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {

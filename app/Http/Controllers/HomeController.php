@@ -15,11 +15,9 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $page='home';
         $sliderdata = Service::limit(4)->get();
         $servicelist1 = Service::limit(6)->get();
         return view('home.index', [
-            'page'=>$page,
             'sliderdata' => $sliderdata,
             'servicelist1' => $servicelist1
         ]);
@@ -33,12 +31,20 @@ class HomeController extends Controller
             'images' => $images
         ]);
     }
-    // public function index()
-    // {
-    //     $sliderdata = Service::limit(4)->get();
-    //     return view('home.index',compact('sliderdata')
-    //     );
-    // }
+    public function categoryservices($id)
+    {
+        $data = Service::find($id);
+        $images = DB::table('images')->where('service_id',$id)->get();
+        return view('home.service', [
+            'data' => $data,
+            'images' => $images
+        ]);
+    }
+    public static function maincategorylist(){
+        return Category::Where('parent_id','=',0)->with('children')->get();
+    }
+
+
     public function aboutus()
     {
         return view(view: 'home.about');

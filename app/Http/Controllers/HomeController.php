@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\service;
+use App\Models\Setting;
 use Illuminate\Support\Facades\DB;
 
 
@@ -17,9 +18,11 @@ class HomeController extends Controller
     {
         $sliderdata = Service::limit(4)->get();
         $servicelist1 = Service::limit(6)->get();
+        $setting = Setting::first();
         return view('home.index', [
             'sliderdata' => $sliderdata,
-            'servicelist1' => $servicelist1
+            'servicelist1' => $servicelist1,
+            'setting'=>$setting
         ]);
     }
     public function service($id)

@@ -69,5 +69,11 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.setting')}}">
+              <i class="ti-settings menu-icon"></i>
+              <span class="menu-title">Settings</span>
+            </a>
+          </li>
         </ul>
       </nav>

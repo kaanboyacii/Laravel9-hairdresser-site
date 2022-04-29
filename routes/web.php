@@ -36,6 +36,9 @@ Route::get('/categoryservices/{id}',[HomeController::class, 'categoryservices'])
 //ADMIN PANEL ROUTES
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     Route::get('/', [AdminHomeController::class, 'index'])->name('index');
+    //ADMIN GENERAL ROUTES
+    Route::get('/setting', [AdminHomeController::class, 'setting'])->name('setting');
+    Route::post('/setting', [AdminHomeController::class, 'settingupdate'])->name('settingupdate');
     //ADMIN CATEGORY ROUTES
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function() {
         Route::get('/', [AdminCategoryController::class, 'index'])->name('index');

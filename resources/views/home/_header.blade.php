@@ -2,24 +2,24 @@
 
 	<header class="header">
 		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="#">Wish</a></div>
+			<div class="logo"><a href="{{route('home')}}">Wish</a></div>
 			<nav class="main_nav">
 				<ul>
-					<li><a href="#">Home</a></li>
+					<li><a href="{{route('home')}}">Home</a></li>
 					<li><a href="#">Categories</a></li>
-					<li><a href="categories.html">Services</a></li>
-					<li><a href="categories.html">About</a></li>
-					<li><a href="categories.html">Contact</a></li>
+					<li><a href="{{route('about')}}">About</a></li>
+					<li><a href="{{route('contact')}}">Contact</a></li>
+					<li><a href="{{route('references')}}">References</a></li>
 					<li class="btn btn-secondary"><a href="contact.html">Login</a></li>
 				</ul>
 			</nav>
 			<div class="header_content ml-auto">
-				<div class="search header_search">
+				<!-- <div class="search header_search">
 					<form action="#">
 						<input type="search" class="search_input" required="required">
 						<button type="submit" id="search_button" class="search_button"><img src="{{asset('assets')}}/images/magnifying-glass.svg" alt=""></button>
 					</form>
-				</div>
+				</div> -->
 				<div class="shopping">
 					<!-- Cart -->
 					<a href="#">

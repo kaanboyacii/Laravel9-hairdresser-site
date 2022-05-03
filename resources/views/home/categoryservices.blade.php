@@ -25,7 +25,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <ul>
                                 <li><a href="categories.html">Home</a></li>
                                 <li><a href="categories.html">Services</a></li>
-                                <li><a href="categories.html">{{$data->category->title}}</a></li>
                             </ul>
                         </div>
                         <br>
@@ -72,7 +71,9 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     <!-- Product -->
                     @foreach($services as $rs)
                     <div class="product">
-                        <div class="product_image"><img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt=""></div>
+                        <div class="product_image">
+                            <img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt="">
+                        </div>
                         <div class="rating rating_4" data-rating="4">
                             <i class="fa fa-star"></i>
                             <i class="fa fa-star"></i>
@@ -111,63 +112,32 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 
     </div>
 
-    <!-- Sidebar Right -->
+    <!-- Newsletter -->
 
-    <div class="sidebar_right clearfix">
-
-        <!-- Promo 1 -->
-        <div class="sidebar_promo_1 sidebar_promo d-flex flex-column align-items-center justify-content-center">
-            <div class="sidebar_promo_image" style="background-image: url({{asset('assets')}}/images/sidebar_promo_1.jpg)"></div>
-            <div class="sidebar_promo_content text-center">
-                <div class="sidebar_promo_title">30%<span>off</span></div>
-                <div class="sidebar_promo_subtitle">On all shoes</div>
-                <div class="sidebar_promo_button"><a href="checkout.html">check out</a></div>
-            </div>
-        </div>
-
-        <!-- Promo 2 -->
-        <div class="sidebar_promo_2 sidebar_promo">
-            <div class="sidebar_promo_image" style="background-image: url({{asset('assets')}}/images/sidebar_promo_2.jpg)"></div>
-            <div class="sidebar_promo_content text-center">
-                <div class="sidebar_promo_title">30%<span>off</span></div>
-                <div class="sidebar_promo_subtitle">On all shoes</div>
-                <div class="sidebar_promo_button"><a href="checkout.html">check out</a></div>
-            </div>
-        </div>
-    </div>
-
-</div>
-
-<!-- Extra -->
-
-
-
-<!-- Newsletter -->
-
-<div class="newsletter">
-    <div class="newsletter_content">
-        <div class="newsletter_image" style="background-image:url({{asset('assets')}}/images/newsletter.jpg)"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="section_title_container text-center">
-                        <div class="section_subtitle">only the best</div>
-                        <div class="section_title">subscribe for a 20% discount</div>
+    <div class="newsletter">
+        <div class="newsletter_content">
+            <div class="newsletter_image" style="background-image:url({{asset('assets')}}/images/newsletter.jpg)"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section_title_container text-center">
+                            <div class="section_subtitle">only the best</div>
+                            <div class="section_title">subscribe for a 20% discount</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="row newsletter_container">
-                <div class="col-lg-10 offset-lg-1">
-                    <div class="newsletter_form_container">
-                        <form action="#">
-                            <input type="email" class="newsletter_input" required="required" placeholder="E-mail here">
-                            <button type="submit" class="newsletter_button">subscribe</button>
-                        </form>
+                <div class="row newsletter_container">
+                    <div class="col-lg-10 offset-lg-1">
+                        <div class="newsletter_form_container">
+                            <form action="#">
+                                <input type="email" class="newsletter_input" required="required" placeholder="E-mail here">
+                                <button type="submit" class="newsletter_button">subscribe</button>
+                            </form>
+                        </div>
+                        <div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
                     </div>
-                    <div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

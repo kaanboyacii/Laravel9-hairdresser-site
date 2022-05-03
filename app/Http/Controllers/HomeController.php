@@ -17,11 +17,32 @@ class HomeController extends Controller
     public function index()
     {
         $sliderdata = Service::limit(4)->get();
-        $servicelist1 = Service::limit(6)->get();
+        $servicelist1 = Service::limit(9)->get();
         $setting = Setting::first();
         return view('home.index', [
             'sliderdata' => $sliderdata,
             'servicelist1' => $servicelist1,
+            'setting'=>$setting
+        ]);
+    }
+    public function about()
+    {
+        $setting = Setting::first();
+        return view('home.about', [
+            'setting'=>$setting
+        ]);
+    }
+    public function contact()
+    {
+        $setting = Setting::first();
+        return view('home.contact', [
+            'setting'=>$setting
+        ]);
+    }
+    public function references()
+    {
+        $setting = Setting::first();
+        return view('home.references', [
             'setting'=>$setting
         ]);
     }

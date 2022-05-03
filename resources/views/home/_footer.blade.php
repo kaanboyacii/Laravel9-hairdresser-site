@@ -49,3 +49,4 @@
     <script src="{{asset('assets')}}/plugins/malihu-custom-scrollbar/jquery.mCustomScrollbar.js"></script>
     <script src="{{asset('assets')}}/plugins/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
     <script src="{{asset('assets')}}/js/categories_custom.js"></script>
+    <script src="{{asset('assets')}}/js/contact_custom.js"></script>

@@ -26,8 +26,10 @@ Route::get('/',function() {
 });
 
 Route::get('/home',[HomeController::class, 'index'])->name('home');
-Route::get('/aboutus',[HomeController::class, 'aboutus'])->name('aboutus');
-Route::get('/contactus',[HomeController::class, 'contactus'])->name('contactus');
+Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/about',[HomeController::class, 'about'])->name('about');
+Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
+Route::get('/references',[HomeController::class, 'references'])->name('references');
 
 
 Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');

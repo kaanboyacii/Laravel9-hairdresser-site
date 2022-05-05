@@ -35,13 +35,16 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                 <div class="review_form_container">
                     <div class="review_form_title">get in touch</div>
                     <div class="review_form_content">
-                        <form action="#" id="review_form" class="review_form">
+                        @include('home.messages')
+                        <form action="{{route('storemessage')}}" id="review_form" class="review_form" method="POST">
+                            @csrf
                             <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
-                                <input type="text" class="review_form_input" placeholder="Name" required="required">
-                                <input type="email" class="review_form_input" placeholder="E-mail" required="required">
-                                <input type="text" class="review_form_input" placeholder="Subject">
+                                <input type="text" class="review_form_input" name="name" placeholder="Name" required="required">
+                                <input type="email" class="review_form_input" name="email" placeholder="E-mail" required="required">
+                                <input type="phone" class="review_form_input" name="phone" placeholder="Phone" required="required">
+                                <input type="text" class="review_form_input" name="subject" placeholder="Subject">
                             </div>
-                            <textarea class="review_form_text" name="review_form_text" placeholder="Message"></textarea>
+                            <textarea class="review_form_text"  name="message" name="review_form_text" placeholder="Message"></textarea>
                             <button type="submit" class="review_form_button">send message</button>
                         </form>
                     </div>

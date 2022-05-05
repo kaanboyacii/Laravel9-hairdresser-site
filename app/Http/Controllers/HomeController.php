@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Image;
+use App\Models\Message;
 use App\Models\service;
 use App\Models\Setting;
 use Illuminate\Support\Facades\DB;
@@ -45,6 +46,18 @@ class HomeController extends Controller
         return view('home.references', [
             'setting'=>$setting
         ]);
+    }
+    public function storemessage(Request $request)
+    {
+        $data = New Message();
+        $data->name = $request->input('name');
+        $data->email = $request->input('email');
+        $data->phone = $request->input('phone');
+        $data->subject = $request->input('subject');
+        $data->message = $request->input('message');
+        $data->ip = request()->ip();
+        $data->save();
+        return redirect()->route('contact')->with('success','Your message has been sent, Thank You');
     }
     public function service($id)
     {

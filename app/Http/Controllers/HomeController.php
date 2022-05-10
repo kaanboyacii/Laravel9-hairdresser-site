@@ -9,6 +9,7 @@ use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
 use App\Models\service;
+use App\Models\Faq;
 use App\Models\Setting;
 use Illuminate\Support\Facades\DB;
 
@@ -45,6 +46,15 @@ class HomeController extends Controller
         $setting = Setting::first();
         return view('home.references', [
             'setting'=>$setting
+        ]);
+    }
+    public function faq()
+    {
+        $setting = Setting::first();
+        $datalist = Faq::all();
+        return view('home.faq', [
+            'setting'=>$setting,
+            'datalist'=>$datalist
         ]);
     }
     public function storemessage(Request $request)

@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
+use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +26,14 @@ Route::redirect(uri:'/anasayfa',destination:'/home');
 Route::get('/',function() {
     return view('home.index');
 });
-
+//HOME PAGE ROUTES
 Route::get('/home',[HomeController::class, 'index'])->name('home');
 Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('/about',[HomeController::class, 'about'])->name('about');
 Route::get('/references',[HomeController::class, 'references'])->name('references');
 Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage',[HomeController::class, 'storemessage'])->name('storemessage');
+Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
 
 
 Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');
@@ -75,6 +77,16 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
         Route::get('/show/{id}','show')->name('show');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
+    });
+    //ADMIN FAQ ROUTES
+    Route::prefix('/faq')->name('faq.')->controller(AdminFaqController::class)->group(function() {
+        Route::get('/',[AdminFaqController::class, 'index'])->name('index');
+        Route::get('/create','create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+        Route::get('/show/{id}','show')->name('show');
     });
 });
 

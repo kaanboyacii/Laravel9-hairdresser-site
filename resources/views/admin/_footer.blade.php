@@ -23,3 +23,9 @@
   <!-- Custom js for this page-->
   <script src="{{asset('assets')}}/admin/js/dashboard.js"></script>
   <!-- End custom js for this page-->
+  <script src="{{asset('assets')}}/admin/js/jquery-3.2.1.min.js"></script>
+<script src="{{asset('assets')}}/admin/styles/bootstrap4/popper.js"></script>
+<script src="{{asset('assets')}}/admin/styles/bootstrap4/bootstrap.min.js"></script>
+<script src="{{asset('assets')}}/admin/plugins/easing/easing.js"></script>
+<script src="{{asset('assets')}}/admin/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="{{asset('assets')}}/admin/js/contact_custom.js"></script>

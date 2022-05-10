@@ -26,7 +26,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/plugins/jquery-ui-1.12.1.custom/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="styles/categories.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/categories_responsive.css">
-
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/contact.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/contact_responsive.css">
 </head>
 
 <body>

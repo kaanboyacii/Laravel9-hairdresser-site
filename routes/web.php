@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
+use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
 use Illuminate\Http\Request;
 /*
@@ -34,6 +35,7 @@ Route::get('/references',[HomeController::class, 'references'])->name('reference
 Route::get('/contact',[HomeController::class, 'contact'])->name('contact');
 Route::post('/storemessage',[HomeController::class, 'storemessage'])->name('storemessage');
 Route::get('/faq',[HomeController::class, 'faq'])->name('faq');
+Route::post('/storecomment',[HomeController::class, 'storecomment'])->name('storecomment');
 
 
 Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');
@@ -74,6 +76,13 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
     //ADMIN MESSAGE ROUTES
     Route::prefix('/message')->name('message.')->controller(AdminMessageController::class)->group(function() {
         Route::get('/',[AdminMessageController::class, 'index'])->name('index');
+        Route::get('/show/{id}','show')->name('show');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/destroy/{id}','destroy')->name('destroy');
+    });
+    //ADMIN MESSAGE ROUTES
+    Route::prefix('/comment')->name('comment.')->controller(AdminCommentController::class)->group(function() {
+        Route::get('/',[AdminCommentController::class, 'index'])->name('index');
         Route::get('/show/{id}','show')->name('show');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');

@@ -15,13 +15,11 @@
         @foreach($mainCategories as $rs)
 		<nav class="menu_nav">
 			<ul class="menu_mm">
-                <li class="menu_mm"><a href="#">{{$rs->title}}</a></li>
+                <li class="menu_mm"><a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a></li>
                 @if(count($rs->children))
                     @include('home.categorytree',['children' => $rs->children])
                 @endif
-              <!-- <li class="menu_mm"><a href="{{route('categoryservices',['id'=>$rs->id])}}">{{$rs->title}}</a></li> -->
 			</ul>
-
 		</nav>
         @endforeach
 	</div>

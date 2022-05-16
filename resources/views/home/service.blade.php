@@ -116,41 +116,32 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 						<div class="reviews_container">
 							<ul>
 								<!-- Review -->
+                                @foreach($reviews as $rs)
 								<li class=" review clearfix">
-									<div class="review_image"><img src="{{asset('assets')}}/images/review_1.jpg" alt=""></div>
+									<div class="review_image"><img src="{{asset('assets')}}/images/user.jpg" alt=""></div>
 									<div class="review_content">
-										<div class="review_name"><a href="#">Maria Smith</a></div>
-										<div class="review_date">Nov 29, 2017</div>
-										<div class="rating rating_4 review_rating" data-rating="4">
+										<div class="review_name"><a href="#">{{$rs->user->name}}</a></div>
+										<div class="review_date">{{$rs->created_at}}</div>
+										<div class="
+										@if ($rs->rate==1) -o rating rating_1 @endif
+										@if ($rs->rate==2) -o rating rating_2 @endif
+										@if ($rs->rate==3) -o rating rating_3 @endif
+										@if ($rs->rate==4) -o rating rating_4 @endif
+										@if ($rs->rate==5) -o rating rating_5 @endif
+										 review_rating" data-rating="4">
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 											<i class="fa fa-star"></i>
 										</div>
+                                        <h4>{{$rs->subject}}</h4>
 										<div class="review_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo. Etiam sed placerat felis. Proin non rutrum ligula. </p>
+											<p>{{$rs->comment}}</p>
 										</div>
 									</div>
 								</li>
-								<!-- Review -->
-								<li class=" review clearfix">
-									<div class="review_image"><img src="{{asset('assets')}}/images/review_2.jpg" alt=""></div>
-									<div class="review_content">
-										<div class="review_name"><a href="#">Maria Smith</a></div>
-										<div class="review_date">Nov 29, 2017</div>
-										<div class="rating rating_4 review_rating" data-rating="4">
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-										</div>
-										<div class="review_text">
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo. Etiam sed placerat felis. Proin non rutrum ligula. </p>
-										</div>
-									</div>
-								</li>
+                                @endforeach
 							</ul>
 						</div>
 					</div>
@@ -164,15 +155,21 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 					<div class="review_form_container">
 						<div class="review_form_title">leave a review</div>
 						<div class="review_form_content">
-							<form action="#" id="review_form" class="review_form">
+							<form action="{{route('storecomment')}}" method="post" id="review_form" class="review_form">
+                                @csrf
+                                <input type="hidden" class="input" name="service_id" value="{{$data->id}}"/>
 								<div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
-									<input type="text" class="review_form_input" placeholder="Name" required="required">
-									<input type="email" class="review_form_input" placeholder="E-mail" required="required">
-									<input type="text" class="review_form_input" placeholder="Subject">
+									<input style="width: 550px;" type="text" class="review_form_input" name="subject" placeholder="Your subject" required="required">
+									<input style="width: 550px;" type="number" class="review_form_input" name="rate" placeholder="Your rate">
 								</div>
-								<textarea class="review_form_text" name="review_form_text" placeholder="Message"></textarea>
+								<textarea class="review_form_text" name="comment" placeholder="Your comment"></textarea>
+                                @auth
 								<button type="submit" class="review_form_button">leave a review</button>
+                                @else
+                                    <a href="/login" class="primary-btn">For Submit Your Review, Please Login</a>
+                                @endauth
 							</form>
+                            @include('home.messages')
 						</div>
 					</div>
 				</div>

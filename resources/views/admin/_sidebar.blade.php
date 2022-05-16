@@ -36,7 +36,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="admin/comments">
+            <a class="nav-link" href="{{route('admin.comment.index')}}">
               <i class="ti-comment menu-icon"></i>
               <span class="menu-title">Comments</span>
             </a>

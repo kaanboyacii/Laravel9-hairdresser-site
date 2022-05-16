@@ -63,7 +63,7 @@
                         <tr>
                           <td>{{$rs->id}}</td>
                           <td>{{$rs->question}}</td>
-                          <td style="">{!! $rs->answer !!}</td>
+                          <td>{!! $rs->answer !!}</td>
                           <td>{{$rs->status}}</td>
                           <td><a class="btn btn-primary" style="color: white;" href="{{route('admin.faq.edit',['id'=>$rs->id])}}">Edit</a></td>
                           <td><a  class="btn btn-danger" style="color: white;" href="{{route('admin.faq.destroy',['id'=>$rs->id])}}", onclick="return confirm('Delete Are You Sure ?')">Delete</a></td>

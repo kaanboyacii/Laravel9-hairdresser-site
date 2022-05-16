@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
+use App\Models\Comment;
 use App\Models\service;
 use App\Models\Faq;
 use App\Models\Setting;
@@ -69,13 +70,27 @@ class HomeController extends Controller
         $data->save();
         return redirect()->route('contact')->with('success','Your message has been sent, Thank You');
     }
+    public function storecomment(Request $request)
+    {
+        $data = New Comment();
+        $data->user_id = Auth::id();
+        $data->service_id = $request->input('service_id');
+        $data->subject = $request->input('subject');
+        $data->comment = $request->input('comment');
+        $data->rate = $request->input('rate');
+        $data->ip = request()->ip();
+        $data->save();
+        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your comment has been sent, Thank You');
+    }
     public function service($id)
     {
         $data = Service::find($id);
         $images = DB::table('images')->where('service_id',$id)->get();
+        $reviews = Comment::where('service_id',$id)->get();
         return view('home.service', [
             'data' => $data,
-            'images' => $images
+            'images' => $images,
+            'reviews' => $reviews
         ]);
     }
     public function categoryservices($id)

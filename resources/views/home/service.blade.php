@@ -47,13 +47,24 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 					<div class="product_content">
 						<div class="product_name">{{$data->title}}</div>
 						<div class="product_price">{{$data->price}}.00$</div>
-						<div class="rating rating_4" data-rating="4">
+                        @php
+                            $average = $data->comment->average('rate');
+                        @endphp
+                        <div class="
+							@if ($average==0) -o rating rating_0 @endif
+							@if ($average>1 or $average==1) -o rating rating_1 @endif
+							@if ($average>2 or $average==2) -o rating rating_2 @endif
+							@if ($average>3 or $average==3) -o rating rating_3 @endif
+							@if ($average>4 or $average==4) -o rating rating_4 @endif
+							@if ($average>5 or $average==5) -o rating rating_5 @endif
+						    review_rating">
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 							<i class="fa fa-star"></i>
 						</div>
+                        <a href="#">{{$data->comment->count('id')}} /{{number_format($average,1)}} Review(s) /Add Review</a>
 						<!-- In Stock -->
 						<div class="in_stock_container">
 							<div class="in_stock in_stock_true"></div>
@@ -112,7 +123,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 			<div class="row">
 				<div class="col">
 					<div class="reviews">
-						<div class="reviews_title">reviews</div>
+						<div class="reviews_title">reviews({{$data->comment->count('id')}})</div>
 						<div class="reviews_container">
 							<ul>
 								<!-- Review -->

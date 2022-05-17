@@ -15,6 +15,6 @@ class Service extends Model
     }
     public function comment()
     {
-        return $this->belongsTo(Comment::class);
+        return $this->hasMany(Comment::class);
     }
 }

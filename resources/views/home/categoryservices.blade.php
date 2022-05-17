@@ -63,24 +63,32 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 
         <div class="row products_container">
             <div class="col">
-
                 <!-- Products -->
-
                 <div class="product_grid">
-
                     <!-- Product -->
                     @foreach($services as $rs)
                     <div class="product">
                         <div class="product_image">
                             <img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt="">
                         </div>
-                        <div class="rating rating_4" data-rating="4">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                        </div>
+                        @php
+                            $average = $data->comment->average('rate');
+                        @endphp
+                        <div class="
+                            @if ($average==0) -o rating rating_0 @endif
+							@if ($average>1 or $average==1) -o rating rating_1 @endif
+							@if ($average>2 or $average==2) -o rating rating_2 @endif
+							@if ($average>3 or $average==3) -o rating rating_3 @endif
+							@if ($average>4 or $average==4) -o rating rating_4 @endif
+							@if ($average>5 or $average==5) -o rating rating_5 @endif
+						    review_rating">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        ({{$data->comment->count('id')}})
+                    </div>
                         <div class="product_content clearfix">
                             <div class="product_info">
                                 <div class="product_name"><a href="{{route('service',['id'=>$rs->id])}}">{{$rs->title}}</a></div>

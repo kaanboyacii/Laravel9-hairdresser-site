@@ -130,7 +130,7 @@ class HomeController extends Controller
                 return redirect()->intended('admin');
             }
             return back()->withErrors([
-                'email' => 'The provided credentials do not match our'
+                'error' => 'The provided credentials do not match our'
             ]);
         } else {
             return view('admin.login');

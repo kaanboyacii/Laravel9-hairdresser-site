@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Setting;
+use App\Models\Message;
 use Illuminate\Http\Request;
 
 
@@ -11,7 +12,10 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('admin.index');
+        $message= Message::where('status','=','New')->get();
+        return view('admin.index',[
+            'message'=>$message
+        ]);
     }
     public function setting()
     {

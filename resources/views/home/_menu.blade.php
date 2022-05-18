@@ -22,4 +22,15 @@
 			</ul>
 		</nav>
         @endforeach
+		<nav class="menu_nav">
+			<ul class="menu_mm">
+               <li><a href="{{route('home')}}">Home</a></li>
+				<li><a href="{{route('about')}}">About</a></li>
+				<li><a href="{{route('contact')}}">Contact</a></li>
+				<li><a href="{{route('references')}}">References</a></li>
+				<li><a href="{{route('faq')}}">FAQ</a></li>
+				<li class="btn btn-secondary"><a href="contact.html">Login</a></li>
+			</ul>
+		</nav>
+
 	</div>

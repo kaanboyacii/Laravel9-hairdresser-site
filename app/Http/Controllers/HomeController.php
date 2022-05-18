@@ -95,11 +95,13 @@ class HomeController extends Controller
     }
     public function categoryservices($id)
     {
-        $data = Service::find($id);
+
         $category = Category::find($id);
-        $services = DB::table('services')->where('category_id',$id)->get();
+       // $servicesx = DB::table('services')->where('category_id',$id)->get();
+        $services = Service::where('category_id',$id)->get();
+       // dd($services);
         return view('home.categoryservices', [
-            'data' => $data,
+
             'category' => $category,
             'services' => $services
         ]);
@@ -140,6 +142,6 @@ class HomeController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('/admin/login');
+        return redirect('/');
     }
 }

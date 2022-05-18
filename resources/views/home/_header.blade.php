@@ -6,11 +6,30 @@
 			<nav class="main_nav">
 				<ul>
 					<li><a href="{{route('home')}}">Home</a></li>
-					<li><a href="#">Categories</a></li>
 					<li><a href="{{route('about')}}">About</a></li>
 					<li><a href="{{route('contact')}}">Contact</a></li>
 					<li><a href="{{route('references')}}">References</a></li>
-					<li class="btn btn-secondary"><a href="contact.html">Login</a></li>
+					<li><a href="{{route('faq')}}">FAQ</a></li>
+					<li class="btn btn-secondary">
+                        @guest
+                            <a href="/loginuser">Login</a>
+                            <a href="#">/</a>
+                            <a href="/registeruser">Register</a>
+                        @endguest
+
+                        @auth
+				    	<a href="#">
+				    		<div class="avatar">
+						    	<img src="{{asset('assets')}}/images/avatar.svg" alt="">
+                                {{Auth::user()->name}}
+						    </div>
+				    	</a>
+                        @endauth
+                        @auth
+                        <a href="#">/</a>
+                        <a href="/logoutuser">Logout</a>
+                        @endauth
+                    </li>
 				</ul>
 			</nav>
 			<div class="header_content ml-auto">
@@ -41,12 +60,6 @@
 									<div class="star_num">0</div>
 								</div>
 							</div>
-						</div>
-					</a>
-					<!-- Avatar -->
-					<a href="#">
-						<div class="avatar">
-							<img src="{{asset('assets')}}/images/avatar.svg" alt="">
 						</div>
 					</a>
 				</div>

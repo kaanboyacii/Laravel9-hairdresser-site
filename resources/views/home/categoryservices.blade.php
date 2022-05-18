@@ -1,6 +1,6 @@
 @extends('layouts.home')
 <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/styles/categories.css">
-@section('title', 'Saloon Hairdresser')
+@section('title', $category->title)
 @section('description')
 Türkiye'nin bir numaralı erkek kuaför hizmeti
 @endsection
@@ -72,8 +72,9 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt="">
                         </div>
                         @php
-                            $average = $data->comment->average('rate');
+                            $average = $rs->comment->average('rate');
                         @endphp
+
                         <div class="
                             @if ($average==0) -o rating rating_0 @endif
 							@if ($average>1 or $average==1) -o rating rating_1 @endif
@@ -87,7 +88,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
                         <i class="fa fa-star"></i>
-                        ({{$data->comment->count('id')}})
+                        ({{$rs->comment->count('id')}})
                     </div>
                         <div class="product_content clearfix">
                             <div class="product_info">

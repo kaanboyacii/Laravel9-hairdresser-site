@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
@@ -83,7 +84,7 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}','destroy')->name('destroy');
     });
-    //ADMIN MESSAGE ROUTES
+    //ADMIN COMMENT ROUTES
     Route::prefix('/comment')->name('comment.')->controller(AdminCommentController::class)->group(function() {
         Route::get('/',[AdminCommentController::class, 'index'])->name('index');
         Route::get('/show/{id}','show')->name('show');
@@ -100,6 +101,16 @@ Route::middleware('auth')->prefix('admin')->name('admin.')->group(function() {
         Route::get('/destroy/{id}','destroy')->name('destroy');
         Route::get('/show/{id}','show')->name('show');
     });
+        //ADMIN USER ROUTES
+        Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function() {
+            Route::get('/','index')->name('index');
+            Route::get('/edit/{id}','edit')->name('edit');
+            Route::get('/show/{id}','show')->name('show');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/destroy/{id}','destroy')->name('destroy');
+            Route::post('/addrole/{id}','addrole')->name('addrole');
+            Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
+        });
 });
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');

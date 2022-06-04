@@ -28,15 +28,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     <br>
                     <hr><hr>
                     <br>
-                    <ul class="menu_mm">
-                        <li><a style="color:black;" href="{{route('home')}}">My Profile</a></li>
-                        <li><a style="color:black;" href="{{route('about')}}">My Appointments</a></li>
-                        <li><a style="color:black;" href="{{route('contact')}}">My Reviews</a></li>
-                        <li><a style="color:black;" href="{{route('references')}}">Checkout</a></li>
-                        <li><a style="color:black;" href="{{route('faq')}}">My Services</a></li>
-                        <li><a style="color:black;" href="{{route('faq')}}">Logout</a></li>
-                        <!-- <li class="btn btn-secondary"><a href="contact.html">Login</a></li> -->
-		        	</ul>
+                    @include('home.user.usermenu')
                     <div class="contact_info_content">
                     </div>
                 </div>

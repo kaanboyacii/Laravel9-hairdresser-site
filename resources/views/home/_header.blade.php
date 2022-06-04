@@ -21,7 +21,7 @@
 				    	<a href="#">
 				    		<div class="avatar">
 						    	<img src="{{asset('assets')}}/images/avatar.svg" alt="">
-                                {{Auth::user()->name}}
+                                <a href="{{route('userpanel.index')}}">{{Auth::user()->name}}</a>
 						    </div>
 				    	</a>
                         @endauth

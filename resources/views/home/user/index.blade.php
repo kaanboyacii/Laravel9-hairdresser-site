@@ -42,7 +42,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     <br>
                     <div class="faq_content">
                     @include('profile.show')
-
                     </div>
                 </div>
             </div>

@@ -20,10 +20,10 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 				<div class="col">
 					<div class="current_page">
 						<ul>
-							<li><a href="categories.html">Home</a></li>
-							<li><a href="categories.html">Services</a></li>
-							<li><a href="categories.html">{{$data->category->title}}</a></li>
-							<li><a href="categories.html">{{$data->title}}</a></li>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Services</a></li>
+							<li><a href="#">{{$data->category->title}}</a></li>
+							<li><a href="#">{{$data->title}}</a></li>
 						</ul>
 					</div>
 				</div>
@@ -65,55 +65,28 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 							<i class="fa fa-star"></i>
 						</div>
                         <a href="#">{{$data->comment->count('id')}} /{{number_format($average,1)}} Review(s) /Add Review</a>
-						<!-- In Stock -->
-						<div class="in_stock_container">
-							<div class="in_stock in_stock_true"></div>
-							<span>in stock</span>
-						</div>
 						<div class="product_text">Details:
-
                           {{$data->description}}
 						</div>
-						<!-- Product Quantity -->
-						<div class="product_quantity_container">
-							<span>Quantity</span>
-							<div class="product_quantity clearfix">
-								<input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-								<div class="quantity_buttons">
-									<div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-caret-up" aria-hidden="true"></i></div>
-									<div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-caret-down" aria-hidden="true"></i></div>
-								</div>
-							</div>
-						</div>
-						<!-- Product Size -->
-						<div class="product_size_container">
-							<span>Size</span>
-							<div class="product_size">
-								<ul class="d-flex flex-row align-items-start justify-content-start">
-									<li>
-										<input type="radio" id="radio_1" name="product_radio" class="regular_radio radio_1">
-										<label for="radio_1">XS</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_2" name="product_radio" class="regular_radio radio_2" checked>
-										<label for="radio_2">S</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_3" name="product_radio" class="regular_radio radio_3">
-										<label for="radio_3">M</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_4" name="product_radio" class="regular_radio radio_4">
-										<label for="radio_4">L</label>
-									</li>
-									<li>
-										<input type="radio" id="radio_5" name="product_radio" class="regular_radio radio_5">
-										<label for="radio_5">XL</label>
-									</li>
-								</ul>
-							</div>
-							<div class="button cart_button"><a href="#">add to cart</a></div>
-						</div>
+                        <br>
+                        <form action="{{route('storeappointment')}}" id="review_form" class="review_form" method="post">
+                        @csrf
+                        <div class="d-flex flex-md-row flex-column align-items-start justify-content-between">
+                            <input type="hidden" name="id" required="required" value="">
+                            <input type="hidden" name="user_id" required="required" value="{{$data->user_id}}">
+                            <input type="hidden" class="input" name="service_id" value="{{$data->id}}"/>
+                            <input type="hidden" class="input" name="worker_id" value="{{$data->user_id}}">
+                            <input type="date" class="review_form_input" name="date" placeholder="Date" required="required">
+                            <input type="time" class="review_form_input" name="time" placeholder="Time" required="required">
+                            <input type="hidden" name="price" required="required" value="{{$data->price}}">
+                            <input type="hidden" class="input" name="status" value="True"/>
+                            <input class="radio" type="radio" name="payment" value="cash" checked /> <span>Cash</span>
+                            <input class="radio" type="radio" name="payment" value="credit card" /> <span>Credit Card</span>
+                        </div>
+                        <textarea class="review_form_text" name="note" name="review_form_text" placeholder="Note"></textarea>
+                        <button type="submit" class="review_form_button">Book Now</button>
+                        </form>
+
 					</div>
 				</div>
 			</div>

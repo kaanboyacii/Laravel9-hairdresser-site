@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\Appointment;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
@@ -81,6 +82,22 @@ class HomeController extends Controller
         $data->ip = request()->ip();
         $data->save();
         return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your comment has been sent, Thank You');
+    }
+    public function storeappointment(Request $request)
+    {
+        $data = New Appointment();
+        $data->user_id = Auth::id();
+        $data->service_id = $request->input('service_id');
+        $data->worker_id = Auth::id();
+        $data->date = $request->input('date');
+        $data->time = $request->input('time');
+        $data->price = $request->input('price');
+        $data->payment = $request->input('payment');
+        $data->note = $request->input('note');
+        $data->status = $request->input('status');
+        $data->IP = request()->IP();
+        $data->save();
+        return redirect()->route('service',['id'=>$request->input('service_id')])->with('success','Your appointment has been completed, Thank You');
     }
     public function service($id)
     {

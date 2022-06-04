@@ -71,7 +71,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($comments as $rs)
+                                        @foreach($appointments as $rs)
                                         <tr>
                                             <td>{{$rs->id}}</td>
                                             <td><a href="{{route('service',['id'=>$rs->service_id])}}">{{$rs->service->title}}</a></td>
@@ -88,6 +88,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                                         @endforeach
                                     </tbody>
                                 </table>
+
                     </div>
                 </div>
             </div>

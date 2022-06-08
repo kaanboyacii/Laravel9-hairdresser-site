@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 
-@section('title', 'User Comments & Reviews')
+@section('title', 'User Appointments')
 @section('description')
 Türkiye'nin bir numaralı erkek kuaför hizmeti
 @endsection
@@ -36,7 +36,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
             <!-- FAQ -->
             <div class="col-lg-7">
                 <div class="faq">
-                    <div class="contact_title">User Comments & Reviews</div>
+                    <div class="contact_title">User Appointments</div>
                     <br>
                     <hr><hr>
                     <br>
@@ -51,22 +51,13 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                                                 Service
                                             </th>
                                             <th>
-                                                Name
+                                                Date & Time
                                             </th>
                                             <th>
-                                                Subject
+                                                Price & Payment
                                             </th>
                                             <th>
-                                                Comment
-                                            </th>
-                                            <th>
-                                                Rate
-                                            </th>
-                                            <th>
-                                                Status
-                                            </th>
-                                            <th>
-                                                Delete
+                                                Detail
                                             </th>
                                         </tr>
                                     </thead>
@@ -75,15 +66,11 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                                         <tr>
                                             <td>{{$rs->id}}</td>
                                             <td><a href="{{route('service',['id'=>$rs->service_id])}}">{{$rs->service->title}}</a></td>
-                                            <td>{{$rs->user->name}}</td>
-                                            <td>{{$rs->subject}}</td>
-                                            <td>{{$rs->comment}}</td>
-                                            <td>{{$rs->rate}}</td>
-                                            <td>{{$rs->status}}</td>
+                                            <td>{{$rs->date}},{{$rs->time}}</td>
+                                            <td>{{$rs->price}}$,{{$rs->payment}}</td>
                                             <td>
-                                                <a href="{{route('userpanel.reviewdestroy',['id'=>$rs->id])}}" class="btn btn-block btn-danger btn-sm" onclick="return confirm('Deleting, Are you sure ?')">Delete</a>
+                                                <a href="{{route('userpanel.showappointments',['id'=>$rs->id])}}" class="btn btn-block btn-warning btn-sm">Show</a>
                                             </td>
-
                                         </tr>
                                         @endforeach
                                     </tbody>

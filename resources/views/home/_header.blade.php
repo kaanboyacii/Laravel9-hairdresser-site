@@ -40,28 +40,6 @@
 					</form>
 				</div> -->
 				<div class="shopping">
-					<!-- Cart -->
-					<a href="#">
-						<div class="cart">
-							<img src="{{asset('assets')}}/images/shopping-bag.svg" alt="">
-							<div class="cart_num_container">
-								<div class="cart_num_inner">
-									<div class="cart_num">1</div>
-								</div>
-							</div>
-						</div>
-					</a>
-					<!-- Star -->
-					<a href="#">
-						<div class="star">
-							<img src="{{asset('assets')}}/images/star.svg" alt="">
-							<div class="star_num_container">
-								<div class="star_num_inner">
-									<div class="star_num">0</div>
-								</div>
-							</div>
-						</div>
-					</a>
 				</div>
 			</div>
 			<div class="burger_container d-flex flex-column align-items-center justify-content-around menu_mm"><div></div><div></div><div></div></div>

@@ -36,7 +36,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <div class="promo_subtitle"></div>
                         </div>
                     </div>
-                    <div class="promo_link"><a href="#">View Now</a></div>
                 </div>
             </div>
 
@@ -50,7 +49,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <div class="promo_subtitle"></div>
                         </div>
                     </div>
-                    <div class="promo_link"><a href="#">View Now</a></div>
                 </div>
             </div>
 
@@ -64,7 +62,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <div class="promo_subtitle"></div>
                         </div>
                     </div>
-                    <div class="promo_link"><a href="#">View Now</a></div>
                 </div>
             </div>
 
@@ -117,8 +114,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <div class="product_price">{{$rs->price}}.00$</div>
                         </div>
                         <div class="product_options">
-                            <div class="product_buy product_option"><img src="{{asset('assets')}}/images/shopping-bag-white.svg" alt=""></div>
-                            <div class="product_fav product_option">+</div>
+                            <div class="product_fav product_option"><a style="color: black;" href="{{route('service',['id'=>$rs->id])}}">Book</div>
                         </div>
                     </div>
                 </div>
@@ -285,30 +281,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 <br>
 <br>
 
-<!-- Extra -->
-
-<div class="extra clearfix">
-    <div class="extra_promo extra_promo_1">
-        <div class="extra_promo_image" style="background-image:url({{asset('assets')}}/images/extra_1.jpg)"></div>
-        <div class="extra_1_content d-flex flex-column align-items-center justify-content-center text-center">
-            <div class="extra_1_price">20%<span>off</span></div>
-            <div class="extra_1_title">On all services</div>
-            <div class="extra_1_text">Don't miss this big discount valid on all services.</div>
-            <div class="button extra_1_button"><a href="checkout.html">check out</a></div>
-        </div>
-    </div>
-    <div class="extra_promo extra_promo_2">
-        <div class="extra_promo_image" style="background-image:url({{asset('assets')}}/images/extra_2.jpg)"></div>
-        <div class="extra_2_content d-flex flex-column align-items-center justify-content-center text-center">
-            <div class="extra_2_title">
-                <div class="extra_2_center">-</div>
-                <div class="extra_2_top">Special</div>
-                <div class="extra_2_bottom">Care</div>
-            </div>
-            <div class="extra_2_text">Don't miss the care opportunities that you can find only on wish.</div>
-            <div class="button extra_2_button"><a href="checkout.html">check out</a></div>
-        </div>
-    </div>
 </div>
 <br>
 <br>

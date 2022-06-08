@@ -55,6 +55,7 @@ Route::middleware('auth')->group(function() {
         Route::get('/reviews','reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
         Route::get('/appointments','appointments')->name('appointments');
+        Route::get('/showappointments/{id}','showappointments')->name('showappointments');
     });
     //ADMIN PANEL ROUTES
     Route::middleware('admin')->prefix('admin')->name('admin.')->group(function() {

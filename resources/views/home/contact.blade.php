@@ -68,47 +68,6 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     </div>
                 </div>
             </div>
-            <!-- FAQ -->
-            <div class="col-lg-7">
-                <div class="faq">
-                    <div class="contact_title">faq</div>
-                    <div class="faq_content">
-
-                        <!-- Accordions -->
-                        <div class="accordions">
-
-                            <div class="accordion_container">
-                                <div class="accordion d-flex flex-row align-items-center">
-                                    <div>Lorem ipsum dolor sit amet, consectetur?</div>
-                                </div>
-                                <div class="accordion_panel">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo.</p>
-                                </div>
-                            </div>
-
-                            <div class="accordion_container">
-                                <div class="accordion d-flex flex-row align-items-center">
-                                    <div>Ipsum dolor sit amet, consectetur?</div>
-                                </div>
-                                <div class="accordion_panel">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo.</p>
-                                </div>
-                            </div>
-
-                            <div class="accordion_container">
-                                <div class="accordion d-flex flex-row align-items-center active">
-                                    <div>Proin eu dui porta, pretium metus vitae?</div>
-                                </div>
-                                <div class="accordion_panel">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis quam ipsum. Pellentesque consequat tellus non tortor tempus, id egestas elit iaculis. Proin eu dui porta, pretium metus vitae, pharetra odio. Sed ac mi commodo, pellentesque erat eget, accumsan justo.</p>
-                                </div>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

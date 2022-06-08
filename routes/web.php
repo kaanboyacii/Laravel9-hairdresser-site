@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\MessageController as AdminMessageController;
 use App\Http\Controllers\Admin\CommentController as AdminCommentController;
 use App\Http\Controllers\Admin\FaqController as AdminFaqController;
+use App\Http\Controllers\Admin\AppointmentController as AdminAppointmentController;
 use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Http\Request;
 /*
@@ -113,6 +114,13 @@ Route::middleware('auth')->group(function() {
             Route::get('/destroy/{id}','destroy')->name('destroy');
             Route::get('/show/{id}','show')->name('show');
         });
+        //ADMIN APPOINTMENT ROUTES
+        Route::prefix('/appointment')->name('appointment.')->controller(AdminAppointmentController::class)->group(function() {
+            Route::get('/{slug}',[AdminAppointmentController::class, 'index'])->name('index');
+            Route::get('/reject/{id}','reject')->name('reject');
+            Route::post('/update/{id}','update')->name('update');
+            Route::get('/show/{id}','show')->name('show');
+        });
         //ADMIN USER ROUTES
         Route::prefix('/user')->name('user.')->controller(AdminUserController::class)->group(function() {
              Route::get('/','index')->name('index');
@@ -123,8 +131,8 @@ Route::middleware('auth')->group(function() {
             Route::post('/addrole/{id}','addrole')->name('addrole');
             Route::get('/destroyrole/{uid}/{rid}','destroyrole')->name('destroyrole');
         });
-    });
-});
+    });//admin panel routes
+});//user auth group
 
 Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
 Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');

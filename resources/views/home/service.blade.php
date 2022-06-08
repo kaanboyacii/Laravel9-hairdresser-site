@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Saloon Hairdresser')
+@section('title', 'Saloon Hairdresser Service')
 @section('description')
 Türkiye'nin bir numaralı erkek kuaför hizmeti
 @endsection
@@ -79,7 +79,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <input type="date" class="review_form_input" name="date" placeholder="Date" required="required">
                             <input type="time" class="review_form_input" name="time" placeholder="Time" required="required">
                             <input type="hidden" name="price" required="required" value="{{$data->price}}">
-                            <input type="hidden" class="input" name="status" value="True"/>
+                            <input type="hidden" class="input" name="status" value="New"/>
                             <input class="radio" type="radio" name="payment" value="cash" checked /> <span>Cash</span>
                             <input class="radio" type="radio" name="payment" value="credit card" /> <span>Credit Card</span>
                         </div>

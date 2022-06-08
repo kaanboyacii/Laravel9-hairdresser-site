@@ -2,7 +2,7 @@
 
 	<header class="header">
 		<div class="header_inner d-flex flex-row align-items-center justify-content-start">
-			<div class="logo"><a href="{{route('home')}}">Wish</a></div>
+			<div class="logo"><a href="{{route('home')}}">Saloon</a></div>
 			<nav class="main_nav">
 				<ul>
 					<li><a href="{{route('home')}}">Home</a></li>

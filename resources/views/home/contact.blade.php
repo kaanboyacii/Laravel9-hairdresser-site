@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 
-@section('title', 'Saloon Hairdresser')
+@section('title', 'Saloon Hairdresser Contact')
 @section('description')
 Türkiye'nin bir numaralı erkek kuaför hizmeti
 @endsection

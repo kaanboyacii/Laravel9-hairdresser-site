@@ -96,9 +96,8 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                                 <div class="product_price">{{$rs->price}}.00$</div>
                             </div>
                             <div class="product_options">
-                                <div class="product_buy product_option"><img src="{{asset('assets')}}/images/shopping-bag-white.svg" alt=""></div>
-                                <div class="product_fav product_option">+</div>
-                            </div>
+                            <div class="product_fav product_option"><a style="color: black;" href="{{route('service',['id'=>$rs->id])}}">Book</div>
+                        </div>
                         </div>
                     </div>
                     @endforeach

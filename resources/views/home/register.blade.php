@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'User Login')
+@section('title', 'User Register')
 @section('description')
 Türkiye'nin bir numaralı erkek kuaför hizmeti
 @endsection

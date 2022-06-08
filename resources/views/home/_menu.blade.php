@@ -5,7 +5,7 @@
             $mainCategories = \App\Http\Controllers\HomeController::maincategorylist();
         @endphp
 		<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
-		<div class="logo menu_mm"><a href="#">Wish</a></div>
+		<div class="logo menu_mm"><a href="#">Saloon</a></div>
         <nav class="menu_nav">
 			<ul class="menu_mm">
                <li><a href="{{route('home')}}">Home</a></li>

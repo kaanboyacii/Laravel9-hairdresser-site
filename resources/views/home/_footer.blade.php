@@ -4,14 +4,14 @@
 	    <div class="container">
 	        <div class="row">
 	            <div class="col text-center">
-	                <div class="footer_logo"><a href="#">Wish</a></div>
+	                <div class="footer_logo"><a href="#">Saloon</a></div>
 	                <nav class="footer_nav">
 	                    <ul>
-	                        <li><a href="index.html">Home</a></li>
-	                        <li><a href="categories.html">Services</a></li>
-	                        <li><a href="categories.html">About</a></li>
-	                        <li><a href="categories.html">Contact</a></li>
-	                        <li><a href="contact.html">Login</a></li>
+                        <li><a href="{{route('home')}}">Home</a></li>
+				    	<li><a href="{{route('about')}}">About</a></li>
+				    	<li><a href="{{route('contact')}}">Contact</a></li>
+				    	<li><a href="{{route('references')}}">References</a></li>
+				    	<li><a href="{{route('faq')}}">FAQ</a></li>
 	                    </ul>
 	                </nav>
 	                <div class="footer_social">
@@ -27,7 +27,7 @@
 	                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	                    Copyright &copy;<script>
 	                        document.write(new Date().getFullYear());
-	                    </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+	                    </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Kaan Boyacı
 	                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	                </div>
 	            </div>

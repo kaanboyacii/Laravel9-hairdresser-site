@@ -25,46 +25,21 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
             </div>
         </div>
         <div class="row promo_container">
-
+            @foreach($categories as $rs)
             <!-- Promo Item -->
             <div class="col-lg-4 promo_col">
                 <div class="promo_item">
                     <div class="promo_image">
                         <img src="{{asset('assets')}}/images/promo_1.jpg" alt="">
                         <div class="promo_content promo_content_1">
-                            <div class="promo_title">For Men</div>
+                            <div class="promo_title">{{$rs->title}}</div>
                             <div class="promo_subtitle"></div>
                         </div>
                     </div>
                 </div>
+                <div class="promo_link"><a href="{{route('categoryservices',['id'=>$rs->id])}}">View Now</a></div>
             </div>
-
-            <!-- Promo Item -->
-            <div class="col-lg-4 promo_col">
-                <div class="promo_item">
-                    <div class="promo_image">
-                        <img src="{{asset('assets')}}/images/promo_2.jpg" alt="">
-                        <div class="promo_content promo_content_2">
-                            <div class="promo_title">For Women</div>
-                            <div class="promo_subtitle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Promo Item -->
-            <div class="col-lg-4 promo_col">
-                <div class="promo_item">
-                    <div class="promo_image">
-                        <img src="{{asset('assets')}}/images/promo_3.jpg" alt="">
-                        <div class="promo_content promo_content_3">
-                            <div class="promo_title">For Kids</div>
-                            <div class="promo_subtitle"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </div>
@@ -138,7 +113,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                         <li><a href="#">#wishhair</a></li>
                     </ul>
                 </div>
-                <div class="gallery_text text-center">Let your self-confidence come with wish</div>
+                <div class="gallery_text text-center">Let your self-confidence come with Saloon</div>
                 <div class="button gallery_button"><a href="#">submit</a></div>
             </div>
         </div>
@@ -267,12 +242,10 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
             <div class="row newsletter_container">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="newsletter_form_container">
-                        <form action="#">
-                            <input type="email" class="newsletter_input" required="required" placeholder="E-mail here">
-                            <button type="submit" class="newsletter_button">subscribe</button>
+                        <form action="{{route('registeruser')}}">
+                            <button type="submit" style="width: 500px;" class="newsletter_button">Register</button>
                         </form>
                     </div>
-                    <div class="newsletter_text">Send us your email and we will let you know about the campaigns, discounts and opportunities.</div>
                 </div>
             </div>
         </div>

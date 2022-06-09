@@ -20,13 +20,15 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $sliderdata = Service::limit(4)->get();
+        $sliderdata = Service::limit(6)->get();
         $servicelist1 = Service::limit(9)->get();
         $setting = Setting::first();
+        $categories = Category::limit(3)->get();
         return view('home.index', [
             'sliderdata' => $sliderdata,
             'servicelist1' => $servicelist1,
-            'setting'=>$setting
+            'setting'=>$setting,
+            'categories' => $categories,
         ]);
     }
     public function about()

@@ -72,7 +72,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                             <img style="width:600px ;height:360px;border-radius:5px;" src="{{ Storage::url($rs->image)}}" alt="">
                         </div>
                         @php
-                            $average = $rs->comment->average('rate');
+                        $average = $rs->comment->average('rate');
                         @endphp
 
                         <div class="
@@ -83,39 +83,27 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
 							@if ($average>4 or $average==4) -o rating rating_4 @endif
 							@if ($average>5 or $average==5) -o rating rating_5 @endif
 						    review_rating">
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        <i class="fa fa-star"></i>
-                        ({{$rs->comment->count('id')}})
-                    </div>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            ({{$rs->comment->count('id')}})
+                        </div>
                         <div class="product_content clearfix">
                             <div class="product_info">
                                 <div class="product_name"><a href="{{route('service',['id'=>$rs->id])}}">{{$rs->title}}</a></div>
                                 <div class="product_price">{{$rs->price}}.00$</div>
                             </div>
                             <div class="product_options">
-                            <div class="product_fav product_option"><a style="color: black;" href="{{route('service',['id'=>$rs->id])}}">Book</div>
-                        </div>
+                                <div class="product_fav product_option"><a style="color: black;" href="{{route('service',['id'=>$rs->id])}}">Book</div>
+                            </div>
                         </div>
                     </div>
                     @endforeach
                 </div>
             </div>
 
-        </div>
-
-        <div class="row page_num_container">
-            <div class="col text-right">
-                <ul class="page_nums">
-                    <li><a href="#">01</a></li>
-                    <li class="active"><a href="#">02</a></li>
-                    <li><a href="#">03</a></li>
-                    <li><a href="#">04</a></li>
-                    <li><a href="#">05</a></li>
-                </ul>
-            </div>
         </div>
 
     </div>
@@ -130,19 +118,17 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     <div class="col">
                         <div class="section_title_container text-center">
                             <div class="section_subtitle">only the best</div>
-                            <div class="section_title">subscribe for a 20% discount</div>
+                            <div class="section_title">subscribe for more campaigns</div>
                         </div>
                     </div>
                 </div>
                 <div class="row newsletter_container">
                     <div class="col-lg-10 offset-lg-1">
                         <div class="newsletter_form_container">
-                            <form action="#">
-                                <input type="email" class="newsletter_input" required="required" placeholder="E-mail here">
-                                <button type="submit" class="newsletter_button">subscribe</button>
+                            <form action="{{route('registeruser')}}">
+                                <button type="submit" style="width: 500px;" class="newsletter_button">Register</button>
                             </form>
                         </div>
-                        <div class="newsletter_text">Integer ut imperdiet erat. Quisque ultricies lectus tellus, eu tristique magna pharetra nec. Fusce vel lorem libero. Integer ex mi, facilisis sed nisi ut, vestib ulum ultrices nulla. Aliquam egestas tempor leo.</div>
                     </div>
                 </div>
             </div>

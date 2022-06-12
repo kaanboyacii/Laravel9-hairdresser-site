@@ -17,7 +17,7 @@
               <img src="{{asset('assets')}}/admin/images/faces/face19.jpg" alt="profile"/>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a href="{{route('admin.setting')}}" class="dropdown-item">
                 <i class="ti-settings text-primary"></i>
                 Settings
               </a>

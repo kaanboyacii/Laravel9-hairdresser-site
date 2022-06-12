@@ -2,8 +2,6 @@
     <li><a style="color:black;" href="{{route('userpanel.index')}}">My Profile</a></li>
     <li><a style="color:black;" href="{{route('userpanel.appointments')}}">My Appointments</a></li>
     <li><a style="color:black;" href="{{route('userpanel.reviews')}}">My Reviews</a></li>
-    <li><a style="color:black;" href="{{route('references')}}">Checkout</a></li>
-    <li><a style="color:black;" href="{{route('faq')}}">My Services</a></li>
-    <li><a style="color:black;" href="{{route('faq')}}">Logout</a></li>
+    <li><a style="color:black;" href="{{route('logoutuser')}}">Logout</a></li>
     <!-- <li class="btn btn-secondary"><a href="contact.html">Login</a></li> -->
 </ul>

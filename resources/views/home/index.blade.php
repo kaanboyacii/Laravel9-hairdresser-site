@@ -114,7 +114,7 @@ Türkiye'nin bir numaralı erkek kuaför hizmeti
                     </ul>
                 </div>
                 <div class="gallery_text text-center">Let your self-confidence come with Saloon</div>
-                <div class="button gallery_button"><a href="#">submit</a></div>
+                <div class="button gallery_button"><a href="{{route('home')}}">Home</a></div>
             </div>
         </div>
     </div>

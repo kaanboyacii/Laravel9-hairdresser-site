@@ -14,7 +14,7 @@
 	                <div class="home_slider_content">
 	                    <div class="home_slider_content_inner">
 	                        <div class="home_slider_subtitle">Promo Prices</div>
-	                        <div class="home_slider_title">{{$rs->title}}</div>
+	                        <div class="home_slider_title"><a style="color:white;" href="{{route('service',['id'=>$rs->id])}}">{{$rs->title}}</a></div>
 	                    </div>
 	                </div>
 	            </div>

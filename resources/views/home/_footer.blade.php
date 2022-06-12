@@ -16,11 +16,8 @@
 	                </nav>
 	                <div class="footer_social">
 	                    <ul>
-	                        <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-	                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-	                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-	                        <li><a href="#"><i class="fa fa-reddit-alien" aria-hidden="true"></i></a></li>
-	                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+	                        <li><a href="https://www.linkedin.com/in/kaan-boyac%C4%B1-6033011b4/"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+	                        <li><a href="https://www.instagram.com/kaan.boyacii/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
 	                    </ul>
 	                </div>
 	                <div class="copyright">

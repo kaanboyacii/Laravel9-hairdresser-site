@@ -51,9 +51,6 @@
                                                 Subject
                                             </th>
                                             <th>
-                                                Comment
-                                            </th>
-                                            <th>
                                                 Rate
                                             </th>
                                             <th>
@@ -74,7 +71,6 @@
                                             <td>{{$rs->service->title}}</td>
                                             <td>{{$rs->user->name}}</td>
                                             <td>{{$rs->subject}}</td>
-                                            <td>{{$rs->comment}}</td>
                                             <td>{{$rs->rate}}</td>
                                             <td>{{$rs->status}}</td>
                                             <td>

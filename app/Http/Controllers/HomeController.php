@@ -105,7 +105,7 @@ class HomeController extends Controller
     {
         $data = Service::find($id);
         $images = DB::table('images')->where('service_id',$id)->get();
-        $reviews = Comment::where('service_id',$id)->get();
+        $reviews = Comment::where('service_id',$id)->where('status','True')->get();
         return view('home.service', [
             'data' => $data,
             'images' => $images,

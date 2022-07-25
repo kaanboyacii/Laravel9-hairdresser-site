@@ -42,8 +42,10 @@ Route::post('/storeappointment',[HomeController::class, 'storeappointment'])->na
 Route::view('/loginuser','home.login')->name('loginuser');
 Route::view('/registeruser','home.register')->name('registeruser');
 Route::get('/logoutuser',[HomeController::class, 'logout'])->name('logoutuser');
-Route::view('/loginadmin','admin.login')->name('loginadmin');
-Route::post('/loginadmincheck',[HomeController::class, 'loginadmincheck'])->name('loginadmincheck');
+
+Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
+Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
 
 
 Route::get('/service/{id}',[HomeController::class, 'service'])->name('service');
@@ -133,11 +135,6 @@ Route::middleware('auth')->group(function() {
         });
     });//admin panel routes
 });//user auth group
-
-Route::get('/admin/login',[HomeController::class, 'login'])->name('admin_login');
-Route::post('/admin/logincheck',[HomeController::class, 'logincheck'])->name('admin_logincheck');
-Route::get('/admin/logout',[HomeController::class, 'logout'])->name('admin_logout');
-
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
